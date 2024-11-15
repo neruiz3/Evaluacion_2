@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>credito-service</artifactId>
+	<artifactId>simulacionCredito-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>credito-service</name>
 	<description>Microservicio-Credito_Evaluacion2</description>
