@@ -30,14 +30,6 @@ public class SimulacionCreditoEntity {
     @Column(name = "monto", nullable = false)
     private double monto;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "tipoPrestamo", nullable = false)
-    private TipoPrestamo tipoPrestamo;
-
-    private double valorPropiedad;
-
     private double cuotaMensual;
 
-    @Enumerated(EnumType.STRING)
-    private Estado estado = Estado.EN_REVISION_INICIAL; //por defecto se inicializa este valor
 }
