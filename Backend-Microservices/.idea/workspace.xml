@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49a523dd-f006-472b-a68d-cad901c0e4b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+    <list default="true" id="a8a23f54-7761-485a-aa5e-ac248f980bf9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulacionCredito-service/src/main/java/com/example/credito_service/entity/SimulacionCreditoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulacionCredito-service/src/main/java/com/example/credito_service/entity/SimulacionCreditoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-service/src/main/java/com/example/eureka_service/EurekaServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/src/main/java/com/example/eureka_service/EurekaServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulacionCredito-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simulacionCredito-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +23,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
+  "associatedIndex": 8
 }]]></component>
-  <component name="ProjectId" id="2ovxo4L1vxlFDHU4gSfq1w2Jiv5" />
+  <component name="ProjectId" id="2ow9PxWATIzxc6X5hkwszO7rVv8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,14 +36,25 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/34687/Documents/Universidad/Master/USACH/Evaluacion_2/Evaluacion_2/Backend-Microservices",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="CreditoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.EurekaServiceApplication">
+    <configuration name="EurekaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eureka-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eureka_service.EurekaServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimulacionCreditoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="simulacionCredito-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.credito_service.CreditoServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.credito_service.SimulacionCreditoServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -59,12 +71,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="49a523dd-f006-472b-a68d-cad901c0e4b5" name="Changes" comment="" />
-      <created>1731764021852</created>
+      <changelist id="a8a23f54-7761-485a-aa5e-ac248f980bf9" name="Changes" comment="" />
+      <created>1731769751479</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1731764021852</updated>
-      <workItem from="1731764023135" duration="47000" />
+      <updated>1731769751479</updated>
+      <workItem from="1731769753422" duration="416000" />
     </task>
     <servers />
   </component>
