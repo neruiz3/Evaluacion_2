@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-service" />
-        <module name="simulacionCredito-service" />
         <module name="config-service" />
+        <module name="simulacionCredito-service" />
+        <module name="gateway-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-service" options="-parameters" />
       <module name="eureka-service" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
       <module name="simulacionCredito-service" options="-parameters" />
     </option>
   </component>
