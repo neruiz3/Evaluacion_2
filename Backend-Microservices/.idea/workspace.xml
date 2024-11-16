@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2060a087-d122-4ddf-aef2-5b500ae63eb4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/simulacionCredito-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/simulacionCredito-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulacionCredito-service/src/main/java/com/example/credito_service/SimulacionCreditoServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulacionCredito-service/src/main/java/com/example/credito_service/SimulacionCreditoServiceApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +29,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/34687/Documents/Universidad/Master/USACH/Evaluacion_2/Evaluacion_2/Backend-Microservices",
+    "last_opened_file_path": "C:/Users/34687/Documents/Universidad/Master/USACH/Evaluacion_2/Evaluacion_2/Backend-Microservices/config-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,7 +38,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.SimulacionCreditoServiceApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayServiceApplication">
     <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="gateway-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gateway_service.GatewayServiceApplication" />
@@ -59,6 +53,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.GatewayServiceApplication" />
+      <item itemvalue="Spring Boot.SimulacionCreditoServiceApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -76,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731771896559</updated>
-      <workItem from="1731771897934" duration="1400000" />
+      <workItem from="1731771897934" duration="2310000" />
     </task>
     <servers />
   </component>
