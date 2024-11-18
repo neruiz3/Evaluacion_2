@@ -4,39 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2060a087-d122-4ddf-aef2-5b500ae63eb4" name="Changes" comment="">
+    <list default="true" id="076df3d3-d818-49e9-a4cd-a29784d2c985" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/controller/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/entity/UsuarioEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/repository/UsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/service/UsuarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulacionCredito-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simulacionCredito-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
+  "associatedIndex": 2
 }]]></component>
-  <component name="ProjectId" id="2owDlYP9sRubDUvPtEVKZqLCGkN" />
+  <component name="ProjectId" id="2p1e7Ny43XV725bxtqksr7WA0qY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.SimulacionCreditoServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/34687/Documents/Universidad/Master/USACH/Evaluacion_2/Evaluacion_2/Backend-Microservices/simulacionCredito-service",
+    "last_opened_file_path": "C:/Users/34687/Documents/Universidad/Master/USACH/Evaluacion_2/Evaluacion_2/Backend-Microservices",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,13 +52,6 @@
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.SimulacionCreditoServiceApplication">
-    <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="gateway-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gateway_service.GatewayServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SimulacionCreditoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="simulacionCredito-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.credito_service.SimulacionCreditoServiceApplication" />
@@ -60,10 +59,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.GatewayServiceApplication" />
-      <item itemvalue="Spring Boot.SimulacionCreditoServiceApplication" />
-    </list>
+    <configuration name="UsuarioServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="usuario-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.usuario_service.UsuarioServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -76,12 +78,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2060a087-d122-4ddf-aef2-5b500ae63eb4" name="Changes" comment="" />
-      <created>1731771896559</created>
+      <changelist id="076df3d3-d818-49e9-a4cd-a29784d2c985" name="Changes" comment="" />
+      <created>1731937842282</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1731771896559</updated>
-      <workItem from="1731771897934" duration="3108000" />
+      <updated>1731937842282</updated>
+      <workItem from="1731937843683" duration="1122000" />
     </task>
     <servers />
   </component>
