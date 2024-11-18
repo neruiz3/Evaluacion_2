@@ -13,7 +13,7 @@ const getCreditoId = id => {
 }
 
 const simularCredito = (data) => {
-    return httpClient.post("/api/v1/credito/calculaSimulacion", data);
+    return httpClient.post("/api/v1/simulacion-credito/calculaSimulacion", data);
 }
 
 const getTiposPrestamos = () => {
