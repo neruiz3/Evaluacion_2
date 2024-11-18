@@ -5,32 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c4d3d31-e6f0-4376-8087-88c0ea7a8516" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/solicitud-service/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/DTO/TipoPrestamoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/Estado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/SolicitudServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/TipoPrestamo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/config/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/controller/SolicitudController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/entity/SolicitudEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/model/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/repository/SolicitudRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/service/SolicitudService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/src/test/java/com/example/solicitud_service/SolicitudServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/DocumentacionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-data/solicitud-service.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/entity/UsuarioEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/entity/UsuarioEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-data/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solicitud-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731958812896</updated>
-      <workItem from="1731958814030" duration="5956000" />
+      <workItem from="1731958814030" duration="6276000" />
     </task>
     <servers />
   </component>
