@@ -1,22 +1,15 @@
-package com.example.usuario_service.entity;
+package com.example.solicitud_service.model;
 
-import jakarta.persistence.*;
-
+import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "clientes")
-@Data //genera automaticamente los getters y setters
-@NoArgsConstructor //genera un constructor sin argumentos para la clase
-@AllArgsConstructor //constructor con todos los argumentos de la clase, por si se los pasas
-public class UsuarioEntity {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
-    private Long id;
     private String rut;
     private String nombre;
     private String apellidos;

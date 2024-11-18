@@ -2,13 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-service" />
         <module name="usuario-service" />
+        <module name="solicitud-service" />
         <module name="config-service" />
         <module name="simulacionCredito-service" />
         <module name="gateway-service" />
@@ -21,6 +21,7 @@
       <module name="eureka-service" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="simulacionCredito-service" options="-parameters" />
+      <module name="solicitud-service" options="-parameters" />
       <module name="usuario-service" options="-parameters" />
     </option>
   </component>

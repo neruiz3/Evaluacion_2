@@ -31,35 +31,4 @@ public class UsuarioService {
     public ArrayList<UsuarioEntity> getClientes(){
         return (ArrayList<UsuarioEntity>) usuarioRepository.findAll();
     }
-
-    public Boolean compruebaCampos(String rut){
-        UsuarioEntity cliente = getClienteByRut(rut);
-        Boolean camposCompletos = false;
-
-        camposCompletos =  cliente.getIngresos() != null &&
-                cliente.getEsMoroso() != null &&
-                cliente.getEsIndependiente() != null &&
-                cliente.getDeudaTotal() != null &&
-                cliente.getSaldo() != null &&
-                cliente.getMayorRetiro12() != null &&
-                cliente.getSaldoPositivo() != null &&
-                cliente.getTiempoCuentaAhorros() != null &&
-                cliente.getMayorRetiro6() != null &&
-                cliente.getDepositoRegular() != null;
-
-        if(cliente.getEsIndependiente()!=null){
-            if (cliente.getEsIndependiente() && cliente.getEsEstable() == null) {
-                return false;
-            }
-            if((!cliente.getEsIndependiente()) && cliente.getAntiguedadLaboral()==null){
-                return false;
-            }
-        }
-        if(cliente.getSaldoPositivo()!=null){
-            if(cliente.getSaldoPositivo() && cliente.getTotalDepositos()==null){
-                return false;
-            }
-        }
-        return camposCompletos;
-    }
 }

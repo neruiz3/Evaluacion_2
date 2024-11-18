@@ -4,12 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076df3d3-d818-49e9-a4cd-a29784d2c985" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config-data/usuario-service.yaml" afterDir="false" />
+    <list default="true" id="5c4d3d31-e6f0-4376-8087-88c0ea7a8516" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/solicitud-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/DTO/TipoPrestamoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/Estado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/SolicitudServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/TipoPrestamo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/controller/SolicitudController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/entity/SolicitudEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/model/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/repository/SolicitudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/service/SolicitudService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/test/java/com/example/solicitud_service/SolicitudServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/DocumentacionDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/entity/UsuarioEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/entity/UsuarioEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/example/usuario_service/service/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -33,23 +56,18 @@
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2
 }]]></component>
-  <component name="ProjectId" id="2p1e7Ny43XV725bxtqksr7WA0qY" />
+  <component name="ProjectId" id="2p2Kcum2x8jfipymysdx6j8EbkB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ConfigServiceApplication.executor": "Run",
-    "Spring Boot.EurekaServiceApplication.executor": "Run",
-    "Spring Boot.GatewayServiceApplication.executor": "Run",
-    "Spring Boot.SimulacionCreditoServiceApplication.executor": "Run",
-    "Spring Boot.UsuarioServiceApplication.executor": "Run",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/34687/Documents/Universidad/Master/USACH/Evaluacion_2/Evaluacion_2/Backend-Microservices",
@@ -58,9 +76,6 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -75,49 +90,17 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayServiceApplication">
-    <configuration name="ConfigServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="config-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.config_service.ConfigServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.config_service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="eureka-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eureka_service.EurekaServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.eureka_service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="gateway-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gateway_service.GatewayServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.gateway_service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.UsuarioServiceApplication">
     <configuration name="SimulacionCreditoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="simulacionCredito-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.credito_service.SimulacionCreditoServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SolicitudServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="solicitud-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.solicitud_service.SolicitudServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,13 +112,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.GatewayServiceApplication" />
-        <item itemvalue="Spring Boot.EurekaServiceApplication" />
-        <item itemvalue="Spring Boot.ConfigServiceApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -148,12 +124,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="076df3d3-d818-49e9-a4cd-a29784d2c985" name="Changes" comment="" />
-      <created>1731937842282</created>
+      <changelist id="5c4d3d31-e6f0-4376-8087-88c0ea7a8516" name="Changes" comment="" />
+      <created>1731958812896</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1731937842282</updated>
-      <workItem from="1731937843683" duration="3000000" />
+      <updated>1731958812896</updated>
+      <workItem from="1731958814030" duration="5956000" />
     </task>
     <servers />
   </component>
