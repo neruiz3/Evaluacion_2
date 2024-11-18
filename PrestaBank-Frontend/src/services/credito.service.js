@@ -44,22 +44,6 @@ const costoTotal = (data) => {
     return httpClient.post('/api/v1/credito/costoTotal', data);
 }
 
-/*const revisionInicial = (data) => {
-    return httpClient.delete(`/api/credito/revisaInicial`);
-}
-const crearCredito = (data) => {
-    return httpClient.post("/api/credito/", data); 
-}
-
-const obtenerCredito = (id) => {
-    return httpClient.get(`/api/credito/${id}`);
-}
-
-const actualizarCredito = (data) => {
-    return httpClient.put('/api/credito', data); 
-}*/
-
-
 export default {
     getCreditos,
     getCreditosRut,
@@ -72,7 +56,4 @@ export default {
     revisionInicial,
     evaluar,
     costoTotal,
-    //obtenerCredito,
-    //actualizarCredito,
-    //eliminarCredito
 };
