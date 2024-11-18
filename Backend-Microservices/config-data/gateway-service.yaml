@@ -27,3 +27,7 @@ spring:
           uri: lb://simulacionCredito-service:8090
           predicates:
             - Path=/api/v1/simulacion-credito/**
+        - id: usuario-service
+          uri: lb://usuario-service:8091
+          predicates:
+            - Path=/api/v1/cliente/**
