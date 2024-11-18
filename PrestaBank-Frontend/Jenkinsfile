@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    tools {
+        maven "maven"  // Definir Maven instalado en Jenkins
+    }
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scmGit(
+                    branches: [[name: '*/main']],
+                    extensions: [],
+                    userRemoteConfigs: [[url: 'https://github.com/neruiz3/Evaluacion_1']]
+                )
+            }
+        }
+
+        stage('Build Maven') {
+            steps {
+                dir('PrestaBank-Frontend') {  // Bloque 'dir' dentro de 'steps'
+                    bat 'npm install'
+                    bat 'npm run build'
+                }
+            }
+        }
+
+        stage('Build and Push Image to Docker Hub') {
+            steps {
+                dir('PrestaBank-Frontend'){
+                    script {
+                        withDockerRegistry(credentialsId: 'docker-credentials') {
+                            bat 'docker build -t nerearuiz3/frontend-image .'
+                            bat 'docker push nerearuiz3/frontend-image'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
