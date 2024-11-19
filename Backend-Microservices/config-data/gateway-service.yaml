@@ -28,8 +28,11 @@ spring:
           metadata:
             cors:
               allowedOrigins: '*'
-              allowedMethods: "*"
-              allowedHeaders: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - OPTION
         - id: solicitud-service
           uri: lb://solicitud-service
           predicates:
