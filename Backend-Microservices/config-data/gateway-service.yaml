@@ -16,22 +16,11 @@ spring:
       discovery:
         locator:
           enabled: true
-      globalcors:
-        cors-configurations:
-          '[**]':
-            allowedOrigins: '*'
-            allowedMethods: "*"
-            allowedHeaders: "*"
       routes:
         - id: simulacionCredito-service
           uri: lb://simulacionCredito-service
           predicates:
             - Path=/api/v1/simulacion-credito/**
-          metadata:
-            cors:
-              allowedOrigins: '*'
-              allowedMethods: "*"
-              allowedHeaders: "*"
         - id: usuario-service
           uri: lb://usuario-service
           predicates:

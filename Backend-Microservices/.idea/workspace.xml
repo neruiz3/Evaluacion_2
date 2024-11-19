@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4328789b-67f2-40ae-a62f-5183c75a6e64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/Estado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/TipoPrestamo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/config/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/controller/EvaluacionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/entity/EvaluacionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/model/Credito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/model/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/repository/EvaluacionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/service/EvaluacionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/example/gateway_service/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-data/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/com/example/gateway_service/GatewayServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/example/gateway_service/GatewayServiceApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,8 +149,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
-        <item itemvalue="Spring Boot.EurekaServiceApplication" />
         <item itemvalue="Spring Boot.ConfigServiceApplication" />
+        <item itemvalue="Spring Boot.EurekaServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +170,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732043012463</updated>
-      <workItem from="1732043013691" duration="3183000" />
+      <workItem from="1732043013691" duration="3463000" />
     </task>
     <servers />
   </component>
