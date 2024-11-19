@@ -1,5 +1,6 @@
 package com.example.solicitud_service.controller;
 
+import com.example.solicitud_service.DTO.CostoDTO;
 import com.example.solicitud_service.DTO.TipoPrestamoDTO;
 import com.example.solicitud_service.entity.SolicitudEntity;
 import com.example.solicitud_service.service.SolicitudService;
@@ -23,13 +24,6 @@ public class SolicitudController {
         SolicitudEntity nuevaSolicitud = solicitudService.creaExpediente(solicitud);
         return ResponseEntity.ok(nuevaSolicitud);
     }
-
-    @PutMapping("/revisaInicial")
-    public ResponseEntity<SolicitudEntity> revisionInicial(@RequestBody SolicitudEntity credito) {
-        SolicitudEntity creditoRevisadoInicial = solicitudService.revisionInicial(credito);
-        return ResponseEntity.ok(creditoRevisadoInicial);
-    }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> eliminaId(@PathVariable Long id) throws Exception {
@@ -65,6 +59,12 @@ public class SolicitudController {
     public List<TipoPrestamoDTO> obtenerTiposPrestamo() {
         List<TipoPrestamoDTO> prestamos = solicitudService.obtenerTiposPrestamo();
         return prestamos;
+    }
+
+    @PostMapping ("/costoTotal")
+    public CostoDTO costoTotal(@RequestBody SolicitudEntity credito) {
+        CostoDTO costos = solicitudService.calculaCostoTotal(credito);
+        return costos;
     }
 
 }
