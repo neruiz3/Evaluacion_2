@@ -2,6 +2,7 @@ package com.example.solicitud_service.controller;
 
 import com.example.solicitud_service.DTO.CostoDTO;
 import com.example.solicitud_service.DTO.TipoPrestamoDTO;
+import com.example.solicitud_service.Estado;
 import com.example.solicitud_service.entity.SolicitudEntity;
 import com.example.solicitud_service.service.SolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/credito")
-@CrossOrigin("*")
 public class SolicitudController {
 
     @Autowired
@@ -23,12 +23,6 @@ public class SolicitudController {
     public ResponseEntity<SolicitudEntity> nuevaSolicitud(@RequestBody SolicitudEntity solicitud) {
         SolicitudEntity nuevaSolicitud = solicitudService.creaExpediente(solicitud);
         return ResponseEntity.ok(nuevaSolicitud);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> eliminaId(@PathVariable Long id) throws Exception {
-        var isDeleted = solicitudService.eliminaCredito(id);
-        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/")
@@ -65,6 +59,12 @@ public class SolicitudController {
     public CostoDTO costoTotal(@RequestBody SolicitudEntity credito) {
         CostoDTO costos = solicitudService.calculaCostoTotal(credito);
         return costos;
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<SolicitudEntity> cambioEstado(@PathVariable Long id,  @RequestBody Estado estado) {
+        SolicitudEntity creditoAprobado = solicitudService.cambioEstado(id, estado);
+        return ResponseEntity.ok(creditoAprobado);
     }
 
 }
