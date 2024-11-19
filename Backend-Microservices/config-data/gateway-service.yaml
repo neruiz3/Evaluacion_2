@@ -28,7 +28,7 @@ spring:
           predicates:
             - Path=/api/v1/simulacion-credito/**
         - id: usuario-service
-          uri: http://usuario-service:8091
+          uri: http://localhost:8091
           predicates:
             - Path=/api/v1/cliente/**
         - id: solicitud-service
