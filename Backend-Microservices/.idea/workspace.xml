@@ -7,7 +7,6 @@
     <list default="true" id="5c4d3d31-e6f0-4376-8087-88c0ea7a8516" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-data/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PrestaBank-Frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../PrestaBank-Frontend/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,9 +147,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EurekaServiceApplication" />
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.ConfigServiceApplication" />
+        <item itemvalue="Spring Boot.EurekaServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731958812896</updated>
       <workItem from="1731958814030" duration="8983000" />
-      <workItem from="1731987444333" duration="13522000" />
+      <workItem from="1731987444333" duration="13728000" />
     </task>
     <servers />
   </component>
