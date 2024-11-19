@@ -20,7 +20,7 @@ spring:
         cors-configurations:
           '[**]':
             allowedOrigins: '*'
-            allowedMethods: "*"
+            allowedMethods: "GET, POST, PUT, DELETE, OPTIONS"
             allowedHeaders: "*"
       routes:
         - id: simulacionCredito-service
