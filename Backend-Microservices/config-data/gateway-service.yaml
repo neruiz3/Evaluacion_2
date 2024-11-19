@@ -9,7 +9,6 @@ eureka:
       default-zone: http://localhost:8761/eureka
   instance:
     hostname: localhost
-
 spring:
   cloud:
     gateway:
@@ -27,12 +26,13 @@ spring:
             - Path=/api/v1/cliente/**
           metadata:
             cors:
-              allowedOrigins: '*'
-              allowedMethods:
-                - GET
-                - POST
-                - PUT
-                - OPTION
+              '[**]':
+                allowedOrigins: '*'
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - OPTION
         - id: solicitud-service
           uri: lb://solicitud-service
           predicates:
