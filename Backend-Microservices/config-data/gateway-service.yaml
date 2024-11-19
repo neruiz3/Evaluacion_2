@@ -18,10 +18,16 @@ spring:
           enabled: true
       globalcors:
         cors-configurations:
-          '[**]':
-            allowedOrigins: '*'
-            allowedMethods: "GET, POST, PUT, DELETE, OPTIONS"
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
             allowedHeaders: "*"
+            allowCredentials: true
       routes:
         - id: simulacionCredito-service
           uri: lb://simulacionCredito-service:8090
