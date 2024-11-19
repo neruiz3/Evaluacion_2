@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c4d3d31-e6f0-4376-8087-88c0ea7a8516" name="Changes" comment="" />
+    <list default="true" id="5c4d3d31-e6f0-4376-8087-88c0ea7a8516" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-data/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,9 +147,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ConfigServiceApplication" />
-        <item itemvalue="Spring Boot.EurekaServiceApplication" />
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
+        <item itemvalue="Spring Boot.EurekaServiceApplication" />
+        <item itemvalue="Spring Boot.ConfigServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731958812896</updated>
       <workItem from="1731958814030" duration="8983000" />
-      <workItem from="1731987444333" duration="8504000" />
+      <workItem from="1731987444333" duration="8848000" />
     </task>
     <servers />
   </component>
