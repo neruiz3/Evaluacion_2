@@ -147,8 +147,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.EurekaServiceApplication" />
+        <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.ConfigServiceApplication" />
       </list>
     </recent_temporary>
@@ -170,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731958812896</updated>
       <workItem from="1731958814030" duration="8983000" />
-      <workItem from="1731987444333" duration="8848000" />
+      <workItem from="1731987444333" duration="9543000" />
     </task>
     <servers />
   </component>
