@@ -137,6 +137,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.SimulacionCreditoServiceApplication" />
+      <item itemvalue="Spring Boot.SolicitudServiceApplication" />
+      <item itemvalue="Spring Boot.UsuarioServiceApplication" />
+      <item itemvalue="Spring Boot.ConfigServiceApplication" />
+      <item itemvalue="Spring Boot.EurekaServiceApplication" />
+      <item itemvalue="Spring Boot.GatewayServiceApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
@@ -162,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731958812896</updated>
       <workItem from="1731958814030" duration="8983000" />
-      <workItem from="1731987444333" duration="6231000" />
+      <workItem from="1731987444333" duration="6608000" />
     </task>
     <servers />
   </component>
