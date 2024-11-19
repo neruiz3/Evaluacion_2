@@ -16,8 +16,6 @@ spring:
       discovery:
         locator:
           enabled: true
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
       globalcors:
         cors-configurations:
           '[**]':
@@ -26,14 +24,14 @@ spring:
             allowedHeaders: "*"
       routes:
         - id: simulacionCredito-service
-          uri: lb://simulacionCredito-service:8090
+          uri: lb://simulacionCredito-service
           predicates:
             - Path=/api/v1/simulacion-credito/**
         - id: usuario-service
-          uri: lb://usuario-service:8091
+          uri: lb://usuario-service
           predicates:
             - Path=/api/v1/cliente/**
         - id: solicitud-service
-          uri: lb://solicitud-service:8092
+          uri: lb://solicitud-service
           predicates:
             - Path=/api/v1/credito/**
