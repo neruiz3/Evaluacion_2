@@ -1,6 +1,5 @@
 server:
   port: 8080
-
 eureka:
   client:
     fetch-registry: true
@@ -8,32 +7,23 @@ eureka:
     service-url:
       default-zone: http://localhost:8761/eureka
   instance:
-    hostname: localhost
+    preferIpAddress: true
 spring:
+  application:
+    name: gateway-service
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: simulacionCredito-service
-          uri: lb://simulacionCredito-service
-          predicates:
-            - Path=/api/v1/simulacion-credito/**
-        - id: usuario-service
-          uri: lb://usuario-service
-          predicates:
-            - Path=/api/v1/cliente/**
-          metadata:
-            cors:
-              '[**]':
-                allowedOrigins: '*'
-                allowedMethods:
-                  - GET
-                  - POST
-                  - PUT
-                  - OPTION
-        - id: solicitud-service
-          uri: lb://solicitud-service
-          predicates:
-            - Path=/api/v1/credito/**
+      mvc:
+        routes:
+          - id: simulacionCredito-service
+            uri: lb://simulacionCredito-service
+            predicates:
+              - Path=/api/v1/simulacion-credito/**
+          - id: usuario-service
+            uri: lb://usuario-service
+            predicates:
+              - Path=/api/v1/cliente/**
+          - id: solicitud-service
+            uri: lb://solicitud-service
+            predicates:
+              - Path=/api/v1/credito/**
