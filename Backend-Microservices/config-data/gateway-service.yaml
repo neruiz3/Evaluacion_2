@@ -27,10 +27,20 @@ spring:
           uri: lb://simulacionCredito-service
           predicates:
             - Path=/api/v1/simulacion-credito/**
+          metadata:
+            cors:
+              allowedOrigins: '*'
+              allowedMethods: "*"
+              allowedHeaders: "*"
         - id: usuario-service
           uri: lb://usuario-service
           predicates:
             - Path=/api/v1/cliente/**
+          metadata:
+            cors:
+              allowedOrigins: '*'
+              allowedMethods: "*"
+              allowedHeaders: "*"
         - id: solicitud-service
           uri: lb://solicitud-service
           predicates:

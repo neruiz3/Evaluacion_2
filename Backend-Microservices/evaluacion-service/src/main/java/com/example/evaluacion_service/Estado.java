@@ -1,0 +1,13 @@
+package com.example.evaluacion_service;
+
+public enum Estado {
+    EN_REVISION_INICIAL,
+    PENDIENTE_DOCUMENTACION,
+    EN_EVALUACION,
+    PRE_APROBADA,
+    EN_APROBACION_FINAL,
+    APROBADA,
+    RECHAZADA,
+    CANCELADA_POR_CLIENTE,
+    EN_DESEMBOLSO
+}

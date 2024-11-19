@@ -9,10 +9,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-service" />
         <module name="usuario-service" />
-        <module name="solicitud-service" />
         <module name="config-service" />
-        <module name="simulacionCredito-service" />
         <module name="gateway-service" />
+        <module name="solicitud-service" />
+        <module name="seguimiento-service" />
+        <module name="simulacionCredito-service" />
+        <module name="evaluacion-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,7 +22,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-service" options="-parameters" />
       <module name="eureka-service" options="-parameters" />
+      <module name="evaluacion-service" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
+      <module name="seguimiento-service" options="-parameters" />
       <module name="simulacionCredito-service" options="-parameters" />
       <module name="solicitud-service" options="-parameters" />
       <module name="usuario-service" options="-parameters" />
