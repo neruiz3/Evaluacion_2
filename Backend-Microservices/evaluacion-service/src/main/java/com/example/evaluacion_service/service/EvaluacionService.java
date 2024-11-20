@@ -31,10 +31,6 @@ public class EvaluacionService {
         return evaluacionRepository.save(nuevaEvaluacion);
     }
 
-    public ArrayList<EvaluacionEntity> getCreditosCliente(String rut) {
-        return (ArrayList<EvaluacionEntity>) evaluacionRepository.findByRut(rut);
-    }
-
     public EvaluacionEntity revisionInicial(EvaluacionEntity credito) {
         //verificar que se han completado los campos y adjuntado los documentos necesarios
         //vamos a coger un cliente para poder evaluar eso, ya que dicha informacion esta en los clientes.

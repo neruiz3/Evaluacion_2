@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import creditoService from "../services/credito.service";
+import creditoService from "../services/solicitud.service";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -18,8 +18,8 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
 const Creditos = () => {
     const { rut } = useParams();
-    const navigate = useNavigate();
     const [creditos, setCreditos] = useState([]);
+    const navigate = useNavigate();
 
     const formatearNombre = (nombre) => {
         switch (nombre) {
@@ -35,31 +35,10 @@ const Creditos = () => {
             return nombre;
         }
     };
-    
-    const formatearEstado = (estado) => {
-        switch (estado) {
-          case "EN_REVISION_INICIAL":
-            return "En Revisión Inicial";
-          case "PENDIENTE_DOCUMENTACION":
-            return "Pendiente de Documentación";
-          case "EN_EVALUACION":
-            return "En Evaluación";
-          case "PRE_APROBADA":
-            return "Pre Aprobada";
-          case "EN_APROBACION_FINAL":
-            return "En Aprobación Final";
-          case "APROBADA":
-            return "Aprobada";
-          case "RECHAZADA":
-            return "Rechazada";
-          case "CANCELADA_POR_CLIENTE":
-            return "Cancelada por el Cliente";
-          case "EN_DESEMBOLSO":
-            return "En Desembolso";
-          default:
-            return estado;
-        }
-      };
+
+    const calculaCosto = (id) => {
+      navigate(`/clientes/costo-total/${id}`);
+    };
 
     const buscarCreditos = async () => {
       creditoService
@@ -122,10 +101,6 @@ const Creditos = () => {
                   CuotaMensual
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Estado
-                </TableCell>
-                <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Operaciones disponibles para la solicitud
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -141,9 +116,7 @@ const Creditos = () => {
                   <TableCell align="left">{credito.monto.toFixed(2)}</TableCell>
                   <TableCell align="left">{credito.plazo} años</TableCell>
                   <TableCell align="left">{credito.tasaInteres.toFixed(2)} %</TableCell>
-                  <TableCell align="left">{credito.coutaMensual?.toFixed(2)||"0.00"}</TableCell>
-                  <TableCell align="left">{formatearEstado(credito.estado)}</TableCell>
-                  
+                  <TableCell align="left">{credito.coutaMensual?.toFixed(2)||"0.00"}</TableCell>               
                   <TableCell>
                     <Button
                       variant="contained"
@@ -162,9 +135,12 @@ const Creditos = () => {
           </Table>
 
           <div style={{ margin: '20px', textAlign: 'center' }}>
-            <Link to={`/clientes/seguimiento/${cliente.rut}`} style={{ textDecoration: 'none', color: '#1976d2' }}>
-                Volver a mi lista de créditos
-            </Link>
+          <Link 
+            to={`/clientes/seguimiento/${creditos.length > 0 ? creditos[0].rut : ''}`} 
+            style={{ textDecoration: 'none', color: '#1976d2' }}
+        >
+              Consultar el estado de mis créditos
+          </Link>
         </div>
         </TableContainer>
         

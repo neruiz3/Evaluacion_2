@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import creditoService from "../services/credito.service";
+import creditoService from "../services/solicitud.service";
 import  Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import TableHead from "@mui/material/TableHead";
@@ -18,8 +18,6 @@ const ClientesCosto = () => {
     const { id } = useParams();
     const [credito, setCredito] = useState({});
 
-
-    const navigate = useNavigate();
 
     useEffect(() => {
         creditoService.getCreditoId(id)

@@ -57,15 +57,6 @@ public class EvaluacionController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/cliente/{rut}")
-    public ResponseEntity<List<EvaluacionEntity>> listaCreditosCliente(@PathVariable String rut) {
-        List<EvaluacionEntity> creditos = evaluacionService.getCreditosCliente(rut);
-        if (creditos.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(creditos);
-    }
-
     @GetMapping("/tipo-prestamo")
     public List<TipoPrestamoDTO> obtenerTiposPrestamo() {
         List<TipoPrestamoDTO> prestamos = evaluacionService.obtenerTiposPrestamo();
