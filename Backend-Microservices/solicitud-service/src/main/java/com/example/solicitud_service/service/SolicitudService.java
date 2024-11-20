@@ -5,11 +5,13 @@ import com.example.solicitud_service.DTO.TipoPrestamoDTO;
 import com.example.solicitud_service.Estado;
 import com.example.solicitud_service.TipoPrestamo;
 import com.example.solicitud_service.entity.SolicitudEntity;
+import com.example.solicitud_service.model.Evaluacion;
 import com.example.solicitud_service.model.Usuario;
 import com.example.solicitud_service.repository.SolicitudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.http.HttpEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +22,7 @@ public class SolicitudService {
     @Autowired
     SolicitudRepository solicitudRepository;
     @Autowired
-    private RestTemplate restTemplate;
+    RestTemplate restTemplate;
 
     public ArrayList<SolicitudEntity> getCreditos() {
         return (ArrayList<SolicitudEntity>) solicitudRepository.findAll();
@@ -35,9 +37,24 @@ public class SolicitudService {
     }
 
     public SolicitudEntity creaExpediente(SolicitudEntity solicitud) {
-        solicitud.setEstado(Estado.EN_REVISION_INICIAL);
         solicitud.setCuotaMensual(calcularCuotaMensual(solicitud.getPlazo(), solicitud.getTasaInteres(), solicitud.getMonto()));
         return solicitudRepository.save(solicitud);
+    }
+
+    public Evaluacion creaEvaluacion(SolicitudEntity solicitud) {
+        Evaluacion evaluacion = new Evaluacion();
+        evaluacion.setId(solicitud.getId());
+        evaluacion.setRut(solicitud.getRut());
+        evaluacion.setPlazo(solicitud.getPlazo());
+        evaluacion.setTasaInteres(solicitud.getTasaInteres());
+        evaluacion.setMonto(solicitud.getMonto());
+        evaluacion.setTipoPrestamo(solicitud.getTipoPrestamo());
+        evaluacion.setValorPropiedad(solicitud.getValorPropiedad());
+        evaluacion.setCuotaMensual(solicitud.getCuotaMensual());
+        evaluacion.setEstado(Estado.EN_REVISION_INICIAL);
+        HttpEntity<Evaluacion> request = new HttpEntity<Evaluacion>(evaluacion);
+        Evaluacion nuevaEvaluacion = restTemplate.postForObject("http://api/v1/credito/", request, Evaluacion.class);
+        return nuevaEvaluacion;
     }
 
     private double calcularCuotaMensual(int plazo, double tasaInteres, double monto) {
@@ -84,30 +101,13 @@ public class SolicitudService {
         return costos;
     }
 
-    public SolicitudEntity cambioEstado(Long id, Estado nuevoEstado){
-        SolicitudEntity credito = solicitudRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Crédito no encontrado con ID: " + id));
-
-        if (!transicionPermitida(credito.getEstado(), nuevoEstado)) {
-            throw new IllegalStateException("Cambio de estado no permitido desde " + credito.getEstado() + " a " + nuevoEstado);
+    public boolean eliminaCredito(Long id) throws Exception {
+        try{
+            solicitudRepository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
         }
-
-        credito.setEstado(nuevoEstado);
-        return solicitudRepository.save(credito);
-    }
-
-    private boolean transicionPermitida(Estado estadoActual, Estado nuevoEstado) {
-        if (estadoActual == Estado.EN_REVISION_INICIAL && nuevoEstado == Estado.PENDIENTE_DOCUMENTACION) return true;
-        if (estadoActual == Estado.EN_REVISION_INICIAL && nuevoEstado == Estado.EN_EVALUACION) return true;
-        if (estadoActual == Estado.PENDIENTE_DOCUMENTACION && nuevoEstado == Estado.EN_EVALUACION) return true;
-        if (estadoActual == Estado.EN_EVALUACION && nuevoEstado == Estado.PENDIENTE_DOCUMENTACION) return true;
-        if (estadoActual == Estado.EN_EVALUACION && nuevoEstado == Estado.PRE_APROBADA) return true;
-        if (estadoActual == Estado.EN_EVALUACION && nuevoEstado == Estado.RECHAZADA) return true;
-        if (estadoActual == Estado.PRE_APROBADA && nuevoEstado == Estado.EN_APROBACION_FINAL) return true;
-        if (estadoActual == Estado.EN_APROBACION_FINAL && nuevoEstado == Estado.APROBADA) return true;
-        if (estadoActual == Estado.APROBADA && nuevoEstado == Estado.EN_DESEMBOLSO) return true;
-
-        return nuevoEstado == Estado.CANCELADA_POR_CLIENTE;
     }
 
 }

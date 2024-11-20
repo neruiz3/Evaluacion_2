@@ -37,7 +37,4 @@ public class SolicitudEntity {
     private double valorPropiedad;
 
     private double cuotaMensual; // no estoy segura de que haya que incluir aqui la cuota mensual
-
-    @Enumerated(EnumType.STRING)
-    private Estado estado = Estado.EN_REVISION_INICIAL; //por defecto se inicializa este valor
 }

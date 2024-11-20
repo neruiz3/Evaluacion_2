@@ -12,6 +12,7 @@ import InicioEjecutivos from './components/InicioEjecutivos.jsx';
 import InfoCredito from './components/InfoCredito.jsx';
 import Informacion from './components/Informacion.jsx';
 import ClientesCosto from './components/ClientesCosto.jsx';
+import InfoEstado from './components/InfoEstado.jsx';
 /*import EmployeeList from './components/EmployeesList';
 import AddEditEmployee from './components/AddEditEmployee';
 import ExtraHoursList from './components/ExtraHoursList';
@@ -40,6 +41,7 @@ function App() {
               <Route path="/ejecutivos/credito-info/:id" element={<InfoCredito/>} />
               <Route path="/ejecutivos/info/:id" element={<Informacion/>} />
               <Route path="/clientes/costo-total/:id" element={<ClientesCosto/>} />
+              <Route path="/clientes/seguimiento/:id" element={<InfoEstado/>} />
             </Routes>
           </div>
       </Router>

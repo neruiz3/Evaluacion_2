@@ -1,9 +1,14 @@
 package com.example.evaluacion_service.service;
 
+import com.example.evaluacion_service.DTO.TipoPrestamoDTO;
 import com.example.evaluacion_service.Estado;
+import com.example.evaluacion_service.TipoPrestamo;
 import com.example.evaluacion_service.entity.EvaluacionEntity;
 import com.example.evaluacion_service.model.Credito;
+import com.example.evaluacion_service.model.Usuario;
+import com.example.evaluacion_service.repository.EvaluacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,12 +20,25 @@ import java.util.stream.Collectors;
 public class EvaluacionService {
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private EvaluacionRepository evaluacionRepository;
 
+    public ArrayList<EvaluacionEntity> getEvaluaciones() {
+        return (ArrayList<EvaluacionEntity>) evaluacionRepository.findAll();
+    }
+
+    public EvaluacionEntity creaEvaluacion (EvaluacionEntity nuevaEvaluacion) {
+        return evaluacionRepository.save(nuevaEvaluacion);
+    }
+
+    public ArrayList<EvaluacionEntity> getCreditosCliente(String rut) {
+        return (ArrayList<EvaluacionEntity>) evaluacionRepository.findByRut(rut);
+    }
 
     public EvaluacionEntity revisionInicial(EvaluacionEntity credito) {
         //verificar que se han completado los campos y adjuntado los documentos necesarios
         //vamos a coger un cliente para poder evaluar eso, ya que dicha informacion esta en los clientes.
-        Usuario cliente = restTemplate.getForObject("http://api/v1/cliente", Usuario.class);
+        Usuario cliente = restTemplate.getForObject("http://api/v1/cliente/rut/" + credito.getRut(), Usuario.class);
 
         if (compruebaCampos(cliente)) {
             if (compruebaDocumentos(credito.getTipoPrestamo(), cliente)) {
@@ -31,7 +49,7 @@ public class EvaluacionService {
         } else {
             credito.setEstado(Estado.PENDIENTE_DOCUMENTACION);
         }
-        return solicitudRepository.save(credito);
+        return evaluacionRepository.save(credito);
     }
 
     private Boolean compruebaCampos(Usuario cliente) {
@@ -96,60 +114,44 @@ public class EvaluacionService {
         return false;
     }
 
-    public Credito revisionInicial (Credito credito){
-        if(documentacionService.compruebaDocumentos(credito.getTipoPrestamo(), credito.getRut())){
-            if(clienteService.compruebaCampos(credito.getRut())){
-                credito.setEstado(Estado.EN_EVALUACION);
-            }
-            else{
-                credito.setEstado(Estado.PENDIENTE_DOCUMENTACION);
-            }
-        }
-        else {
-            credito.setEstado(Estado.PENDIENTE_DOCUMENTACION);
-        }
-        return creditoRepository.save(credito);
-    }
-
-    public CreditoEntity evaluacionCredito (CreditoEntity credito){
+    public EvaluacionEntity evaluacionCredito (EvaluacionEntity credito){
         System.out.println("Credito: " + credito.getTipoPrestamo().name());
-        credito.setCuotaMensual(calcularCuotaMensual(credito.getPlazo(), credito.getTasaInteres(), credito.getMonto()));
-        ClienteEntity cliente = clienteRepository.findByRut(credito.getRut());
+        Usuario cliente = restTemplate.getForObject("http://api/v1/cliente/rut/" + credito.getRut(), Usuario.class);
 
         double cuotaIngreso = credito.getCuotaMensual()/cliente.getIngresos()*100.0;
         if(cuotaIngreso > 35.0){
             credito.setEstado(Estado.RECHAZADA);
-            return creditoRepository.save(credito);
+            return evaluacionRepository.save(credito);
         }
         if(cliente.getEsMoroso()){
             credito.setEstado(Estado.RECHAZADA);
-            return creditoRepository.save(credito);
+            return evaluacionRepository.save(credito);
         }
         if(cliente.getEsIndependiente()){
             if(!cliente.getEsEstable()){
                 credito.setEstado(Estado.RECHAZADA);
-                return creditoRepository.save(credito);
+                return evaluacionRepository.save(credito);
             }
         }
         else{
             if(cliente.getAntiguedadLaboral()<1){
                 credito.setEstado(Estado.RECHAZADA);
-                return creditoRepository.save(credito);
+                return evaluacionRepository.save(credito);
             }
         }
         double deuda = cliente.getDeudaTotal()+credito.getCuotaMensual();
         if(deuda > 0.5*cliente.getIngresos()){
             credito.setEstado(Estado.RECHAZADA);
-            return creditoRepository.save(credito);
+            return evaluacionRepository.save(credito);
         }
         if(!(validacion(credito))){
             credito.setEstado(Estado.RECHAZADA);
-            return creditoRepository.save(credito);
+            return evaluacionRepository.save(credito);
         }
         int edadFutura = cliente.getEdad()+credito.getPlazo();
         if(edadFutura>70){
             credito.setEstado(Estado.RECHAZADA);
-            return creditoRepository.save(credito);
+            return evaluacionRepository.save(credito);
         }
         //capacidad de ahorro
         int requisitos = calculaCapacidadAhorro(cliente,credito);
@@ -164,11 +166,12 @@ public class EvaluacionService {
             cliente.setCapacidadAhorro("moderada"); //rechazar
             credito.setEstado(Estado.EN_EVALUACION);
         }
-        clienteRepository.save(cliente);
-        return creditoRepository.save(credito);
+        HttpEntity<Usuario> request = new HttpEntity<Usuario>(cliente);
+        Usuario actualizaCliente = restTemplate.postForObject("http://api/v1/cliente/", request, Usuario.class);
+        return evaluacionRepository.save(credito);
     }
 
-    private int calculaCapacidadAhorro(ClienteEntity cliente, CreditoEntity credito){
+    private int calculaCapacidadAhorro(Usuario cliente, EvaluacionEntity credito){
         int requisitos = 0;
 
         //saldo minimo
@@ -203,7 +206,7 @@ public class EvaluacionService {
         return requisitos;
     }
 
-    public boolean validacion(CreditoEntity simulacion) {
+    public boolean validacion(EvaluacionEntity simulacion) {
         // Validar el plazo
         if (simulacion.getPlazo() > simulacion.getTipoPrestamo().getPlazoMaximo()) {
             //throw new IllegalArgumentException("El plazo excede el máximo permitido para este tipo de préstamo.");
@@ -225,8 +228,8 @@ public class EvaluacionService {
         return true;
     }
 
-    public CreditoEntity cambioEstado(Long id, Estado nuevoEstado){
-        CreditoEntity credito = creditoRepository.findById(id)
+    public EvaluacionEntity cambioEstado(Long id, Estado nuevoEstado){
+        EvaluacionEntity credito = evaluacionRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Crédito no encontrado con ID: " + id));
 
         if (!transicionPermitida(credito.getEstado(), nuevoEstado)) {
@@ -234,7 +237,7 @@ public class EvaluacionService {
         }
 
         credito.setEstado(nuevoEstado);
-        return creditoRepository.save(credito);
+        return evaluacionRepository.save(credito);
     }
 
     private boolean transicionPermitida(Estado estadoActual, Estado nuevoEstado) {
@@ -249,6 +252,39 @@ public class EvaluacionService {
         if (estadoActual == Estado.APROBADA && nuevoEstado == Estado.EN_DESEMBOLSO) return true;
 
         return nuevoEstado == Estado.CANCELADA_POR_CLIENTE;
+    }
+
+    public boolean eliminaCredito(Long id) throws Exception {
+        try{
+            evaluacionRepository.deleteById(id);
+            restTemplate.delete("http://api/v1/credito/" + id);
+            return true;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    public List<TipoPrestamoDTO> obtenerTiposPrestamo() {
+        return List.of(TipoPrestamo.values()).stream()
+                .map(this::mapearEnumADTO)
+                .collect(Collectors.toList());
+    }
+
+    private TipoPrestamoDTO mapearEnumADTO(TipoPrestamo tipo) {
+        return new TipoPrestamoDTO(
+                tipo.name(),
+                tipo.getPlazoMaximo(),
+                tipo.getMontoMaximo(),
+                tipo.getTasaInteresMinima(),
+                tipo.getTasaInteresMaxima(),
+                tipo.isComprobanteIngreso(),
+                tipo.isCertificadoAvaluo(),
+                tipo.isHistorialCrediticio(),
+                tipo.isEscrituraVivienda(),
+                tipo.isEstadoFinanciero(),
+                tipo.isPlanNegocios(),
+                tipo.isPresupuestoRemodelacion()
+        );
     }
 
 }
