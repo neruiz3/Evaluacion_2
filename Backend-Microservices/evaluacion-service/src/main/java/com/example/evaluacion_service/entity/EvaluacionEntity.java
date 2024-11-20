@@ -19,6 +19,8 @@ public class EvaluacionEntity {
     @Column(unique = true, nullable = false)
     private Long id;
 
+    private Long idSolicitud;
+
     private String rut; //para saber el cliente que ha solicitado ese credito, no se si hace fala realmente
 
     @Column(name = "plazo", nullable = false)

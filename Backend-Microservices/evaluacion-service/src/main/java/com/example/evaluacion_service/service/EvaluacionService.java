@@ -5,6 +5,7 @@ import com.example.evaluacion_service.Estado;
 import com.example.evaluacion_service.TipoPrestamo;
 import com.example.evaluacion_service.entity.EvaluacionEntity;
 import com.example.evaluacion_service.model.Credito;
+import com.example.evaluacion_service.model.Seguimiento;
 import com.example.evaluacion_service.model.Usuario;
 import com.example.evaluacion_service.repository.EvaluacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,10 @@ public class EvaluacionService {
         return evaluacionRepository.findById(id).get();
     }
 
+    public EvaluacionEntity getCreditoSolicitud(Long idSolicitud) {
+        return evaluacionRepository.findByIdSolicitud(idSolicitud);
+    }
+
     public EvaluacionEntity creaEvaluacion (EvaluacionEntity nuevaEvaluacion) {
         return evaluacionRepository.save(nuevaEvaluacion);
     }
@@ -39,6 +44,7 @@ public class EvaluacionService {
         //verificar que se han completado los campos y adjuntado los documentos necesarios
         //vamos a coger un cliente para poder evaluar eso, ya que dicha informacion esta en los clientes.
         Usuario cliente = restTemplate.getForObject("http://usuario-service/api/v1/cliente/rut/" + credito.getRut(), Usuario.class);
+        Seguimiento seguimiento = restTemplate.getForObject("http://seguimiento-service/api/v1/seguimiento/rut/" + credito.getRut(), Seguimiento.class);
 
         if (compruebaCampos(cliente)) {
             if (compruebaDocumentos(credito.getTipoPrestamo(), cliente)) {
@@ -169,6 +175,14 @@ public class EvaluacionService {
         HttpEntity<Usuario> request = new HttpEntity<Usuario>(cliente);
         Usuario actualizaCliente = restTemplate.postForObject("http://api/v1/cliente/", request, Usuario.class);
         return evaluacionRepository.save(credito);
+    }
+
+    public Seguimiento actualizaSeguimiento(EvaluacionEntity credito){
+        Seguimiento actualizacion = restTemplate.getForObject("http://seguimiento-service/api/v1/seguimiento/idSolicitud/" + credito.getIdSolicitud(), Seguimiento.class);
+        actualizacion.setEstado(credito.getEstado());
+        HttpEntity<Seguimiento> request = new HttpEntity<Seguimiento>(actualizacion);
+        Seguimiento actualiza = restTemplate.postForObject("http://evaluacion-service/api/v1/seguimiento/", request, Seguimiento.class);
+        return actualiza;
     }
 
     private int calculaCapacidadAhorro(Usuario cliente, EvaluacionEntity credito){

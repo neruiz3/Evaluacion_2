@@ -1,7 +1,7 @@
-package com.example.solicitud_service.model;
+package com.example.seguimiento_service.model;
 
-import com.example.solicitud_service.Estado;
-import com.example.solicitud_service.TipoPrestamo;
+import com.example.seguimiento_service.Estado;
+import com.example.seguimiento_service.TipoPrestamo;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
@@ -23,5 +23,5 @@ public class Evaluacion {
     private double valorPropiedad;
     private double cuotaMensual; // no estoy segura de que haya que incluir aqui la cuota mensual
     @Enumerated(EnumType.STRING)
-    private Estado estado = Estado.EN_REVISION_INICIAL; //por defecto se inicializa este valor
+    private Estado estado;
 }

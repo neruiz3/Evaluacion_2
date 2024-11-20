@@ -5,11 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4328789b-67f2-40ae-a62f-5183c75a6e64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/config-data/seguimiento-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/model/Seguimiento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguimiento-service/src/main/java/com/example/seguimiento_service/Estado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguimiento-service/src/main/java/com/example/seguimiento_service/TipoPrestamo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguimiento-service/src/main/java/com/example/seguimiento_service/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguimiento-service/src/main/java/com/example/seguimiento_service/controller/SeguimientoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguimiento-service/src/main/java/com/example/seguimiento_service/entity/SeguimientoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguimiento-service/src/main/java/com/example/seguimiento_service/model/Evaluacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguimiento-service/src/main/java/com/example/seguimiento_service/repository/SeguimientoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seguimiento-service/src/main/java/com/example/seguimiento_service/service/SeguimientoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/model/Seguimiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-data/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/controller/EvaluacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/controller/EvaluacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/entity/EvaluacionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/entity/EvaluacionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/model/Credito.java" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/model/Credito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/repository/EvaluacionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/repository/EvaluacionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/service/EvaluacionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/example/evaluacion_service/service/EvaluacionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguimiento-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seguimiento-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seguimiento-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/seguimiento-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/controller/SolicitudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/controller/SolicitudController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/entity/SolicitudEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/entity/SolicitudEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/model/Evaluacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/model/Evaluacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/service/SolicitudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud-service/src/main/java/com/example/solicitud_service/service/SolicitudService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PrestaBank-Frontend/src/components/CreditosClientes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../PrestaBank-Frontend/src/components/CreditosClientes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrestaBank-Frontend/src/components/InfoEstado.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../PrestaBank-Frontend/src/components/InfoEstado.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrestaBank-Frontend/src/components/InicioEjecutivos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../PrestaBank-Frontend/src/components/InicioEjecutivos.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -32,6 +53,9 @@
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2
 }]]></component>
@@ -69,6 +93,11 @@
 }]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.seguimiento_service.config" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -157,8 +186,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EurekaServiceApplication" />
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
+        <item itemvalue="Spring Boot.EurekaServiceApplication" />
         <item itemvalue="Spring Boot.ConfigServiceApplication" />
       </list>
     </recent_temporary>
@@ -179,7 +208,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732043012463</updated>
-      <workItem from="1732043013691" duration="25100000" />
+      <workItem from="1732043013691" duration="32153000" />
     </task>
     <servers />
   </component>

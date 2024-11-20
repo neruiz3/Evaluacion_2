@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import creditoService from "../services/solicitud.service";
+import creditoService from "../services/seguimiento.service";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -61,6 +61,11 @@ const InfoEstado = () => {
         }
       };
 
+      const addDocumentos = (rut) => {
+        console.log("Printing rut", rut);
+        navigate(`/clientes/documentos/${rut}`);
+      };
+
     const buscarCreditos = async () => {
       creditoService
         .getCreditosRut(rut)
@@ -80,30 +85,6 @@ const InfoEstado = () => {
     useEffect(() => {
         buscarCreditos();
       }, []);
-
-    const addDocumentos = (rut) => {
-        console.log("Printing rut", rut);
-        navigate(`/clientes/documentos/${rut}`);
-      };
-
-    const calculaCosto = (id) => {
-      navigate(`/clientes/costo-total/${id}`);
-    };
-    
-    const revision = (credito) => {
-      creditoService
-        .revisionInicial(credito)
-        .then((response) => {
-          console.log("Revisando documentos.", response.data);
-          buscarCreditos();
-        })
-        .catch((error) => {
-          console.log(
-            "Se ha producido un error al intentar revisar la documentación.",
-            error
-          );
-        });
-    };
 
     const cambiarEstado = (id, estado) => {
         console.log('Enviando estado:', estado);
@@ -138,31 +119,19 @@ const InfoEstado = () => {
             <TableHead>
               <TableRow>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Rut
+                  Id de la solicitud
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Valor de la propiedad
+                  Rut
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
                   Tipo de préstamo solicitado
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Monto
-                </TableCell>
-                <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Plazo
-                </TableCell>
-                <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Tasa de interés
-                </TableCell>
-                <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  CuotaMensual
-                </TableCell>
-                <TableCell align="left" sx={{ fontWeight: "bold" }}>
                   Estado
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Operaciones disponibles para la solicitud
+                  Operaciones disponibles
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -172,13 +141,9 @@ const InfoEstado = () => {
                   key={credito.id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
+                  <TableCell align="left">{credito.idSolicitud}</TableCell>
                   <TableCell align="left">{credito.rut}</TableCell>
-                  <TableCell align="left">{credito.valorPropiedad.toFixed(2)}</TableCell>
                   <TableCell align="left">{formatearNombre(credito.tipoPrestamo)}</TableCell>
-                  <TableCell align="left">{credito.monto.toFixed(2)}</TableCell>
-                  <TableCell align="left">{credito.plazo} años</TableCell>
-                  <TableCell align="left">{credito.tasaInteres.toFixed(2)} %</TableCell>
-                  <TableCell align="left">{credito.coutaMensual?.toFixed(2)||"0.00"}</TableCell>
                   <TableCell align="left">{formatearEstado(credito.estado)}</TableCell>
                   {credito.estado === "PENDIENTE_DOCUMENTACION" && (
                     <TableCell>
@@ -194,42 +159,16 @@ const InfoEstado = () => {
                       </Button>
                     </TableCell>
                     )}
-                  {credito.estado === "PENDIENTE_DOCUMENTACION" && (
-                    <TableCell>
-                      <Button
-                        variant="contained"
-                        color="info"
-                        size="small"
-                        onClick={() => revision(credito)}
-                        style={{ marginLeft: "0.5rem" }}
-                        startIcon={<AddIcon />}
-                      >
-                        Solicitar revision
-                      </Button>
-                    </TableCell>
-                    )}
                   <TableCell>
                     <Button
                       variant="contained"
                       color="error"
                       size="small"
-                      onClick={() => cambiarEstado(credito.id, "CANCELADA_POR_CLIENTE")}
+                      onClick={() => cambiarEstado(credito.idSolicitud, "CANCELADA_POR_CLIENTE")}
                       style={{ marginLeft: "0.5rem" }}
                       startIcon={<CancelIcon />}
                     >
                       Cancelar
-                    </Button>
-                  </TableCell>
-                  <TableCell>
-                    <Button
-                      variant="contained"
-                      color="info"
-                      size="small"
-                      onClick={() => calculaCosto(credito.id)}
-                      style={{ marginLeft: "0.5rem" }}
-                      startIcon={<InfoIcon />}
-                    >
-                      Costo Total
                     </Button>
                   </TableCell>
 
@@ -252,6 +191,19 @@ const InfoEstado = () => {
               ))}
             </TableBody>
           </Table>
+
+          <Link
+             to={`/clientes/credito/nuevo/${rut}`}
+            style={{ textDecoration: "none", marginBottom: "1rem" }}
+          >
+            <Button
+              variant="contained"
+              color="primary"
+              startIcon={<AddIcon />}
+            >
+              Volver a mi lista de creditos solicitados
+            </Button>
+          </Link>
         </TableContainer>
         );
 };

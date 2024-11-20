@@ -5,6 +5,7 @@ import com.example.solicitud_service.DTO.TipoPrestamoDTO;
 import com.example.solicitud_service.Estado;
 import com.example.solicitud_service.entity.SolicitudEntity;
 import com.example.solicitud_service.model.Evaluacion;
+import com.example.solicitud_service.model.Seguimiento;
 import com.example.solicitud_service.service.SolicitudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,7 @@ public class SolicitudController {
     public ResponseEntity<SolicitudEntity> nuevaSolicitud(@RequestBody SolicitudEntity solicitud) {
         SolicitudEntity nuevaSolicitud = solicitudService.creaExpediente(solicitud);
         Evaluacion evaluacion = solicitudService.creaEvaluacion(solicitud);
+        Seguimiento seguimiento = solicitudService.creaSeguimiento(solicitud);
         return ResponseEntity.ok(nuevaSolicitud);
     }
 

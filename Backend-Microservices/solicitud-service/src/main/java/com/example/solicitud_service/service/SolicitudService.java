@@ -6,6 +6,7 @@ import com.example.solicitud_service.Estado;
 import com.example.solicitud_service.TipoPrestamo;
 import com.example.solicitud_service.entity.SolicitudEntity;
 import com.example.solicitud_service.model.Evaluacion;
+import com.example.solicitud_service.model.Seguimiento;
 import com.example.solicitud_service.model.Usuario;
 import com.example.solicitud_service.repository.SolicitudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,7 @@ public class SolicitudService {
 
     public Evaluacion creaEvaluacion(SolicitudEntity solicitud) {
         Evaluacion evaluacion = new Evaluacion();
-        evaluacion.setId(solicitud.getId());
+        evaluacion.setIdSolicitud(solicitud.getId());
         evaluacion.setRut(solicitud.getRut());
         evaluacion.setPlazo(solicitud.getPlazo());
         evaluacion.setTasaInteres(solicitud.getTasaInteres());
@@ -55,6 +56,17 @@ public class SolicitudService {
         HttpEntity<Evaluacion> request = new HttpEntity<Evaluacion>(evaluacion);
         Evaluacion nuevaEvaluacion = restTemplate.postForObject("http://evaluacion-service/api/v1/evaluacion/", request, Evaluacion.class);
         return nuevaEvaluacion;
+    }
+
+    public Seguimiento creaSeguimiento(SolicitudEntity solicitud) {
+        Seguimiento seguimiento = new Seguimiento();
+        seguimiento.setIdSolicitud(solicitud.getId());
+        seguimiento.setRut(solicitud.getRut());
+        seguimiento.setTipoPrestamo(solicitud.getTipoPrestamo());
+        seguimiento.setEstado(Estado.EN_REVISION_INICIAL);
+        HttpEntity<Seguimiento> request = new HttpEntity<Seguimiento>(seguimiento);
+        Seguimiento nuevoSeguimiento = restTemplate.postForObject("http://seguimiento-service/api/v1/seguimiento/", request, Seguimiento.class);
+        return nuevoSeguimiento;
     }
 
     private double calcularCuotaMensual(int plazo, double tasaInteres, double monto) {

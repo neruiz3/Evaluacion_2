@@ -3,6 +3,7 @@ package com.example.evaluacion_service.controller;
 import com.example.evaluacion_service.DTO.TipoPrestamoDTO;
 import com.example.evaluacion_service.Estado;
 import com.example.evaluacion_service.entity.EvaluacionEntity;
+import com.example.evaluacion_service.model.Seguimiento;
 import com.example.evaluacion_service.service.EvaluacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +33,12 @@ public class EvaluacionController {
         return ResponseEntity.ok(credito);
     }
 
+    @GetMapping("/idSolicitud/{idSolicitud}")
+    public ResponseEntity<EvaluacionEntity> getCreditoIdSolicitud(@PathVariable Long idSolicitud) {
+        EvaluacionEntity credito = evaluacionService.getCreditoSolicitud(idSolicitud);
+        return ResponseEntity.ok(credito);
+    }
+
     @PostMapping("/")
     public ResponseEntity<EvaluacionEntity> nuevaEvaluacion(@RequestBody EvaluacionEntity evaluacion) {
         EvaluacionEntity nuevaEvaluacion = evaluacionService.creaEvaluacion(evaluacion);
@@ -41,18 +48,21 @@ public class EvaluacionController {
     @PutMapping("/revisaInicial")
     public ResponseEntity<EvaluacionEntity> revisionInicial(@RequestBody EvaluacionEntity credito) {
         EvaluacionEntity creditoRevisadoInicial = evaluacionService.revisionInicial(credito);
+        Seguimiento actualizacion = evaluacionService.actualizaSeguimiento(creditoRevisadoInicial);
         return ResponseEntity.ok(creditoRevisadoInicial);
     }
 
     @PutMapping("/evaluar")
     public ResponseEntity<EvaluacionEntity> evaluaCredito(@RequestBody EvaluacionEntity credito) {
         EvaluacionEntity creditoEvaluado = evaluacionService.evaluacionCredito(credito);
+        Seguimiento actualizacion = evaluacionService.actualizaSeguimiento(creditoEvaluado);
         return ResponseEntity.ok(creditoEvaluado);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<EvaluacionEntity> cambioEstado(@PathVariable Long id, @RequestBody Estado estado) {
         EvaluacionEntity creditoAprobado = evaluacionService.cambioEstado(id, estado);
+        Seguimiento actualizacion = evaluacionService.actualizaSeguimiento(creditoAprobado);
         return ResponseEntity.ok(creditoAprobado);
     }
 

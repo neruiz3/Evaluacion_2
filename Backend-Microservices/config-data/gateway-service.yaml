@@ -31,3 +31,7 @@ spring:
             uri: lb://evaluacion-service
             predicates:
               - Path=/api/v1/evaluacion/**
+          - id: seguimiento-service
+            uri: lb://seguimiento-service
+            predicates:
+              - Path=/api/v1/seguimiento/**

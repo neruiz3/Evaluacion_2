@@ -9,4 +9,5 @@ import java.util.ArrayList;
 @Repository
 public interface EvaluacionRepository extends JpaRepository<EvaluacionEntity, Long> {
     public ArrayList<EvaluacionEntity> findByRut(String rut);
+    public EvaluacionEntity findByIdSolicitud(Long idSolicitud);
 }

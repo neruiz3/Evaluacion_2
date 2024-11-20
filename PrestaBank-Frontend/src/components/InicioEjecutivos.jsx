@@ -139,6 +139,9 @@ const InicioEjecutivos = () => {
         <TableHead>
             <TableRow>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
+                    Id
+                </TableCell>
+                <TableCell align="left" sx={{ fontWeight: "bold" }}>
                     Rut del Cliente
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
@@ -158,6 +161,7 @@ const InicioEjecutivos = () => {
                     key={credito.id}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
+                    <TableCell align="left">{credito.idSolicitud}</TableCell>
                     <TableCell align="left">{credito.rut}</TableCell>
                     <TableCell align="left">{formatearNombre(credito.tipoPrestamo)}</TableCell>
                     <TableCell align="left">{formatearEstado(credito.estado)}</TableCell>
@@ -197,6 +201,20 @@ const InicioEjecutivos = () => {
                                 Chequear documentación
                             </Button>
                         )}
+                        {credito.estado === "PENDIENTE_DOCUMENTACION" && (
+                            <TableCell>
+                              <Button
+                                variant="contained"
+                                color="info"
+                                size="small"
+                                onClick={() => compruebaDocs(credito)}
+                                style={{ marginLeft: "0.5rem" }}
+                                startIcon={<AddIcon />}
+                              >
+                                Revisar
+                              </Button>
+                            </TableCell>
+                            )}
                         {credito.estado === "CANCELADA_POR_CLIENTE" && (
                             <Button
                                 variant="contained"
