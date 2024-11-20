@@ -34,6 +34,46 @@ const InicioEjecutivos = () => {
           );
         });
     };
+
+    const formatearNombre = (nombre) => {
+        switch (nombre) {
+          case "PRIMERAVIVIENDA":
+            return "Primera Vivienda";
+          case "SEGUNDAVIVIENDA":
+            return "Segunda Vivienda";
+          case "COMERCIAL":
+            return "Propiedad Comercial";
+          case "REMODELACION":
+            return "Proyecto de Remodelación";
+          default:
+            return nombre;
+        }
+    };
+    
+    const formatearEstado = (estado) => {
+        switch (estado) {
+          case "EN_REVISION_INICIAL":
+            return "En Revisión Inicial";
+          case "PENDIENTE_DOCUMENTACION":
+            return "Pendiente de Documentación";
+          case "EN_EVALUACION":
+            return "En Evaluación";
+          case "PRE_APROBADA":
+            return "Pre Aprobada";
+          case "EN_APROBACION_FINAL":
+            return "En Aprobación Final";
+          case "APROBADA":
+            return "Aprobada";
+          case "RECHAZADA":
+            return "Rechazada";
+          case "CANCELADA_POR_CLIENTE":
+            return "Cancelada por el Cliente";
+          case "EN_DESEMBOLSO":
+            return "En Desembolso";
+          default:
+            return estado;
+        }
+      };
   
     useEffect(() => {
       init();
@@ -119,8 +159,8 @@ const InicioEjecutivos = () => {
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                     <TableCell align="left">{credito.rut}</TableCell>
-                    <TableCell align="left">{credito.tipoPrestamo}</TableCell>
-                    <TableCell align="left">{credito.estado}</TableCell>
+                    <TableCell align="left">{formatearNombre(credito.tipoPrestamo)}</TableCell>
+                    <TableCell align="left">{formatearEstado(credito.estado)}</TableCell>
                     <TableCell align="left"> {/* Añadir esta celda para operaciones */}
                         <Button
                             variant="contained"

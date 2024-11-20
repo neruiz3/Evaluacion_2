@@ -4,6 +4,10 @@ const getCreditos = () => {
     return httpClient.get('/api/v1/evaluacion/');
 }
 
+const getCreditoId = id => {
+    return httpClient.get(`/api/v1/evaluacion/id/${id}`);
+}
+
 const getTiposPrestamos = () => {
     return httpClient.get('/api/v1/evaluacion/tipo-prestamo');
 }
@@ -31,6 +35,7 @@ const evaluar = (data) => {
 
 export default {
     getCreditos,
+    getCreditoId,
     getTiposPrestamos,
     create,
     remove,

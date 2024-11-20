@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/evaluacion")
-@CrossOrigin("*")
 public class EvaluacionController {
 
     @Autowired
@@ -25,6 +24,12 @@ public class EvaluacionController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(evaluaciones);
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<EvaluacionEntity> getCreditoId(@PathVariable Long id) {
+        EvaluacionEntity credito = evaluacionService.getCredito(id);
+        return ResponseEntity.ok(credito);
     }
 
     @PostMapping("/")

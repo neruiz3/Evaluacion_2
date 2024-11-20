@@ -55,7 +55,7 @@ const NuevoCredito = () => {
             })
             .catch((error) => {
                 console.log(
-                "Ha ocurrido un error al intentar crear nuevo cliente.",
+                "Ha ocurrido un error al intentar crear nuevo credito.",
                 error
                 );
             });

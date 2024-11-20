@@ -27,6 +27,10 @@ public class EvaluacionService {
         return (ArrayList<EvaluacionEntity>) evaluacionRepository.findAll();
     }
 
+    public EvaluacionEntity getCredito(Long id) {
+        return evaluacionRepository.findById(id).get();
+    }
+
     public EvaluacionEntity creaEvaluacion (EvaluacionEntity nuevaEvaluacion) {
         return evaluacionRepository.save(nuevaEvaluacion);
     }
@@ -34,7 +38,7 @@ public class EvaluacionService {
     public EvaluacionEntity revisionInicial(EvaluacionEntity credito) {
         //verificar que se han completado los campos y adjuntado los documentos necesarios
         //vamos a coger un cliente para poder evaluar eso, ya que dicha informacion esta en los clientes.
-        Usuario cliente = restTemplate.getForObject("http://api/v1/cliente/rut/" + credito.getRut(), Usuario.class);
+        Usuario cliente = restTemplate.getForObject("http://usuario-service/api/v1/cliente/rut/" + credito.getRut(), Usuario.class);
 
         if (compruebaCampos(cliente)) {
             if (compruebaDocumentos(credito.getTipoPrestamo(), cliente)) {

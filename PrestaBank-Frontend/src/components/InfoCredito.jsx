@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import clienteService from "../services/cliente.service";
-import creditoService from "../services/solicitud.service";
+import creditoService from "../services/evaluacion.service";
 import  Container from "@mui/material/Container";
 import  Divider from "@mui/material/Divider";
 import  Typography from "@mui/material/Typography";
@@ -26,7 +26,14 @@ const InfoCredito = () => {
     const [cliente, setCliente] = useState({});
     const [credito, setCredito] = useState({});
     const [error, setError] = useState(null);
-    const [documentacion, setDocumentacion] = useState({});
+    const [documentacion, setDocumentacion] = useState({
+        comprobanteIngresos: null,
+        historialCrediticio: null,
+        certificadoAntiguedadLaboral: null,
+        informeDeudas: null,
+        fotocopiaRut: null,
+        cuentaAhorros: null
+      });
     
     const {id} = useParams();
     
@@ -42,12 +49,14 @@ const InfoCredito = () => {
         })
         .then(response => {
             setCliente(response.data);
-            return documentacionService.getByRut(response.data.rut);
-        })
-        .then(documentacionResponse => {
-            const documento = documentacionResponse.data; // Asegúrate de obtener los datos correctamente
-            console.log(documento);
-            setDocumentacion(documento);
+            setDocumentacion({
+                comprobanteIngresos: documento.comprobanteIngresos ? `data:application/pdf;base64,${documento.comprobanteIngresos}` : null,
+                historialCrediticio: documento.historialCrediticio ? `data:application/pdf;base64,${documento.historialCrediticio}` : null,
+                certificadoAntiguedadLaboral: documento.certificadoAntiguedadLaboral ? `data:application/pdf;base64,${documento.certificadoAntiguedadLaboral}` : null,
+                informeDeudas: documento.informeDeudas ? `data:application/pdf;base64,${documento.informeDeudas}` : null,
+                fotocopiaRut: documento.fotocopiaRut ? `data:application/pdf;base64,${documento.fotocopiaRut}` : null,
+                cuentaAhorros: documento.cuentaAhorros ? `data:application/pdf;base64,${documento.cuentaAhorros}` : null,
+              });
         })
         .catch(error => {
             console.error('Error al obtener información:', error);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import clienteService from "../services/cliente.service";
-import creditoService from "../services/solicitud.service";
+import creditoService from "../services/evaluacion.service";
 import  Container from "@mui/material/Container";
 import  Divider from "@mui/material/Divider";
 import  Typography from "@mui/material/Typography";
@@ -112,7 +112,7 @@ const Informacion = () => {
                     </TableRow>
                     {cliente.esIndependiente ? (
                         <TableRow>
-                            <TableCell>Teniendo en cuenta los ingresos de los últimos años, ¿es estable?</TableCell>
+                            <TableCell><strong>Teniendo en cuenta los ingresos de los últimos años, ¿es estable?</strong></TableCell>
                             <TableCell>{mostrarBooleano(cliente.esEstable)}</TableCell>
                         </TableRow>
                     ) : (

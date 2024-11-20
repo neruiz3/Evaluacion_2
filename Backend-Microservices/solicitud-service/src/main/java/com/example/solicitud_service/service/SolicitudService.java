@@ -53,7 +53,7 @@ public class SolicitudService {
         evaluacion.setCuotaMensual(solicitud.getCuotaMensual());
         evaluacion.setEstado(Estado.EN_REVISION_INICIAL);
         HttpEntity<Evaluacion> request = new HttpEntity<Evaluacion>(evaluacion);
-        Evaluacion nuevaEvaluacion = restTemplate.postForObject("http://api/v1/credito/", request, Evaluacion.class);
+        Evaluacion nuevaEvaluacion = restTemplate.postForObject("http://evaluacion-service/api/v1/evaluacion/", request, Evaluacion.class);
         return nuevaEvaluacion;
     }
 

@@ -80,7 +80,7 @@ const Creditos = () => {
             <TableHead>
               <TableRow>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  Rut
+                  Id
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
                   Valor de la propiedad
@@ -98,7 +98,7 @@ const Creditos = () => {
                   Tasa de interés
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
-                  CuotaMensual
+                  Cuota mensual
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "bold" }}>
                 </TableCell>
@@ -110,13 +110,13 @@ const Creditos = () => {
                   key={credito.id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell align="left">{credito.rut}</TableCell>
+                  <TableCell align="left">{credito.id}</TableCell>
                   <TableCell align="left">{credito.valorPropiedad.toFixed(2)}</TableCell>
                   <TableCell align="left">{formatearNombre(credito.tipoPrestamo)}</TableCell>
                   <TableCell align="left">{credito.monto.toFixed(2)}</TableCell>
                   <TableCell align="left">{credito.plazo} años</TableCell>
                   <TableCell align="left">{credito.tasaInteres.toFixed(2)} %</TableCell>
-                  <TableCell align="left">{credito.coutaMensual?.toFixed(2)||"0.00"}</TableCell>               
+                  <TableCell align="left">{credito.cuotaMensual?.toFixed(2)}</TableCell>               
                   <TableCell>
                     <Button
                       variant="contained"
