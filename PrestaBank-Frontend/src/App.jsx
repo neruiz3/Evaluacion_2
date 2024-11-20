@@ -41,7 +41,7 @@ function App() {
               <Route path="/ejecutivos/credito-info/:id" element={<InfoCredito/>} />
               <Route path="/ejecutivos/info/:id" element={<Informacion/>} />
               <Route path="/clientes/costo-total/:id" element={<ClientesCosto/>} />
-              <Route path="/clientes/seguimiento/:id" element={<InfoEstado/>} />
+              <Route path="/clientes/seguimiento/:rut" element={<InfoEstado/>} />
             </Routes>
           </div>
       </Router>

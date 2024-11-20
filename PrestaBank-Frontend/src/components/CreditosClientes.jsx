@@ -16,7 +16,7 @@ import AddIcon from "@mui/icons-material/Add";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
 
-const Creditos = () => {
+const CreditosClientes = () => {
     const { rut } = useParams();
     const [creditos, setCreditos] = useState([]);
     const navigate = useNavigate();
@@ -136,7 +136,7 @@ const Creditos = () => {
 
           <div style={{ margin: '20px', textAlign: 'center' }}>
           <Link 
-            to={`/clientes/seguimiento/${creditos.length > 0 ? creditos[0].rut : ''}`} 
+            to={`/clientes/seguimiento/${rut}`} 
             style={{ textDecoration: 'none', color: '#1976d2' }}
         >
               Consultar el estado de mis créditos
@@ -146,4 +146,4 @@ const Creditos = () => {
         
         );
 };
-export default Creditos;
+export default CreditosClientes;

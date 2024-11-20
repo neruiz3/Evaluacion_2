@@ -67,6 +67,7 @@ const InfoEstado = () => {
       };
 
     const buscarCreditos = async () => {
+        console.log(rut)
       creditoService
         .getCreditosRut(rut)
         .then((response) => {
@@ -76,7 +77,7 @@ const InfoEstado = () => {
         })
         .catch((error) => {
           console.log(
-            "Se ha producido un error al intentar mostrar listado de todos los empleados.",
+            "Se ha producido un error al intentar mostrar listado de todos los creditos.",
             error
           );
         });
@@ -101,19 +102,6 @@ const InfoEstado = () => {
 
     return  (
         <TableContainer component={Paper}>
-          <br />
-          <Link
-             to={`/clientes/credito/nuevo/${rut}`}
-            style={{ textDecoration: "none", marginBottom: "1rem" }}
-          >
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={<AddIcon />}
-            >
-              Solicitar un nuevo crédito
-            </Button>
-          </Link>
           <br /> <br />
           <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
             <TableHead>
