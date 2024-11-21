@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor //constructor con todos los argumentos de la clase, por si se los pasas
 public class Credito {
 
+    private long id;
     private long idCredito;
     private String rut; //para saber el cliente que ha solicitado ese credito, no se si hace fala realmente
     private int plazo;

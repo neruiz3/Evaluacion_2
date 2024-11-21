@@ -166,7 +166,7 @@ const InfoEstado = () => {
                         variant="contained"
                         color="success"
                         size="small"
-                        onClick={() => cambiarEstado(credito.id, "EN_APROBACION_FINAL")}
+                        onClick={() => cambiarEstado(credito.idSolicitud, "EN_APROBACION_FINAL")}
                         style={{ marginLeft: "0.5rem" }}
                         startIcon={<CheckIcon />}
                       >
@@ -180,18 +180,14 @@ const InfoEstado = () => {
             </TableBody>
           </Table>
 
-          <Link
-             to={`/clientes/credito/nuevo/${rut}`}
-            style={{ textDecoration: "none", marginBottom: "1rem" }}
-          >
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={<AddIcon />}
-            >
-              Volver a mi lista de creditos solicitados
-            </Button>
+          <div style={{ margin: '20px', textAlign: 'center' }}>
+          <Link 
+            to={`/clientes/solicita-credito/${rut}`} 
+            style={{ textDecoration: 'none', color: '#1976d2' }}
+        >
+              Volver a mi lista de solicitudes
           </Link>
+        </div>
         </TableContainer>
         );
 };

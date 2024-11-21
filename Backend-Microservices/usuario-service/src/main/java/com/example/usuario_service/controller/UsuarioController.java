@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/cliente")
@@ -26,8 +27,37 @@ public class UsuarioController {
 
     @PutMapping("/")
     public ResponseEntity<UsuarioEntity> actualizaCliente(@RequestBody UsuarioEntity cliente) {
-        UsuarioEntity clienteActualizado = usuarioService.actualizaCliente(cliente);
-        return ResponseEntity.ok(clienteActualizado);
+        Optional<UsuarioEntity> clienteExistente = Optional.ofNullable(usuarioService.getClienteById(cliente.getId()));
+        UsuarioEntity nuevoCliente;
+
+        if (clienteExistente.isPresent()) {
+            // Si el cliente existe, actualizamos ciertos campos
+            UsuarioEntity clienteActualizado = clienteExistente.get();
+            clienteActualizado.setRut(cliente.getRut());
+            clienteActualizado.setNombre(cliente.getNombre());
+            clienteActualizado.setApellidos(cliente.getApellidos());
+            clienteActualizado.setEdad(cliente.getEdad());
+            clienteActualizado.setIngresos(cliente.getIngresos());
+            clienteActualizado.setEsMoroso(cliente.getEsMoroso());
+            clienteActualizado.setEsIndependiente(cliente.getEsIndependiente());
+            clienteActualizado.setEsEstable(cliente.getEsEstable());
+            clienteActualizado.setAntiguedadLaboral(cliente.getAntiguedadLaboral());
+            clienteActualizado.setDeudaTotal(cliente.getDeudaTotal());
+            clienteActualizado.setCapacidadAhorro(cliente.getCapacidadAhorro());
+            clienteActualizado.setSaldo(cliente.getSaldo());
+            clienteActualizado.setMayorRetiro12(cliente.getMayorRetiro12());
+            clienteActualizado.setSaldoPositivo(cliente.getSaldoPositivo());
+            clienteActualizado.setTiempoCuentaAhorros(cliente.getTiempoCuentaAhorros());
+            clienteActualizado.setMayorRetiro6(cliente.getMayorRetiro6());
+            clienteActualizado.setDepositoRegular(cliente.getDepositoRegular());
+            clienteActualizado.setTotalDepositos(cliente.getTotalDepositos());
+            // Aquí puedes agregar otros campos que desees actualizar
+            nuevoCliente = usuarioService.guardaCliente(clienteActualizado);
+        } else {
+            // Si el cliente no existe, lo guardamos como nuevo
+            nuevoCliente = usuarioService.guardaCliente(cliente);
+        }
+        return ResponseEntity.ok(nuevoCliente);
     }
 
     @GetMapping("/")
@@ -44,7 +74,7 @@ public class UsuarioController {
 
     @GetMapping("/rut/{rut}")
     public ResponseEntity<UsuarioEntity> getClienteByRut(@PathVariable String rut) {
-        UsuarioEntity cliente = usuarioService.getClienteByRut(rut);
+        UsuarioEntity cliente = usuarioService.getClienteByRut(rut).get();
         return ResponseEntity.ok(cliente);
     }
 
@@ -63,7 +93,7 @@ public class UsuarioController {
             @RequestParam(value = "fotocopiaRut", required = false) MultipartFile fotocopiaRut,
             @RequestParam(value = "cuentaAhorros", required = false) MultipartFile cuentaAhorros
     ) throws IOException {
-        UsuarioEntity cliente = usuarioService.getClienteByRut(rut);
+        UsuarioEntity cliente = usuarioService.getClienteByRut(rut).get();
 
         if (comprobanteIngresos != null) cliente.setComprobanteIngresos(comprobanteIngresos.getBytes());
         if (escrituraVivienda != null) cliente.setEscrituraVivienda(escrituraVivienda.getBytes());
@@ -118,7 +148,7 @@ public class UsuarioController {
 
     @GetMapping("/documentacion/{rut}")
     public ResponseEntity<DocumentacionDTO> obtenerDocumentacionPorRut(@PathVariable String rut) {
-        UsuarioEntity documentosCliente = usuarioService.getClienteByRut(rut);
+        UsuarioEntity documentosCliente = usuarioService.getClienteByRut(rut).get();
         DocumentacionDTO dto = new DocumentacionDTO();
         dto.setId(documentosCliente.getId());
         dto.setRut(documentosCliente.getRut());

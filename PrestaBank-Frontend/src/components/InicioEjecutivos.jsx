@@ -215,18 +215,6 @@ const InicioEjecutivos = () => {
                               </Button>
                             </TableCell>
                             )}
-                        {credito.estado === "CANCELADA_POR_CLIENTE" && (
-                            <Button
-                                variant="contained"
-                                color="error"
-                                size="small"
-                                onClick={() => elimina(credito.id)}
-                                style={{ marginLeft: "0.5rem" }}
-                                startIcon={<CheckIcon />}
-                            >
-                                Eliminar solicitud
-                            </Button>
-                        )}
                         {credito.estado === "EN_APROBACION_FINAL" && (
                             <Button
                                 variant="contained"

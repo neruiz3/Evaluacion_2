@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor //genera un constructor sin argumentos para la clase
 @AllArgsConstructor //constructor con todos los argumentos de la clase, por si se los pasas
 public class Seguimiento {
+    private long id;
     private long idSolicitud;
     private String rut; //para saber el cliente que ha solicitado ese credito, no se si hace fala realmente
     @Enumerated(EnumType.STRING)

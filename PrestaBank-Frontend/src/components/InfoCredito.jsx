@@ -50,13 +50,14 @@ const InfoCredito = () => {
         .then(response => {
             setCliente(response.data);
             setDocumentacion({
-                comprobanteIngresos: documento.comprobanteIngresos ? `data:application/pdf;base64,${documento.comprobanteIngresos}` : null,
-                historialCrediticio: documento.historialCrediticio ? `data:application/pdf;base64,${documento.historialCrediticio}` : null,
-                certificadoAntiguedadLaboral: documento.certificadoAntiguedadLaboral ? `data:application/pdf;base64,${documento.certificadoAntiguedadLaboral}` : null,
-                informeDeudas: documento.informeDeudas ? `data:application/pdf;base64,${documento.informeDeudas}` : null,
-                fotocopiaRut: documento.fotocopiaRut ? `data:application/pdf;base64,${documento.fotocopiaRut}` : null,
-                cuentaAhorros: documento.cuentaAhorros ? `data:application/pdf;base64,${documento.cuentaAhorros}` : null,
+                comprobanteIngresos: response.data.comprobanteIngresos ? `data:application/pdf;base64,${response.data.comprobanteIngresos}` : null,
+                historialCrediticio: response.data.historialCrediticio ? `data:application/pdf;base64,${response.data.historialCrediticio}` : null,
+                certificadoAntiguedadLaboral: response.data.certificadoAntiguedadLaboral ? `data:application/pdf;base64,${response.data.certificadoAntiguedadLaboral}` : null,
+                informeDeudas: response.data.informeDeudas ? `data:application/pdf;base64,${response.data.informeDeudas}` : null,
+                fotocopiaRut: response.data.fotocopiaRut ? `data:application/pdf;base64,${response.data.fotocopiaRut}` : null,
+                cuentaAhorros: response.data.cuentaAhorros ? `data:application/pdf;base64,${response.data.cuentaAhorros}` : null,
               });
+            console.log(response.data)
         })
         .catch(error => {
             console.error('Error al obtener información:', error);
@@ -66,6 +67,8 @@ const InfoCredito = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        console.log(name);
+        
         setCliente({ ...cliente, [name]: value });
     };
 
@@ -89,6 +92,7 @@ const InfoCredito = () => {
         });
     };
 
+
     const renderPdfViewer = (label, base64Data) => {
         if (!base64Data) {
             return (
@@ -101,14 +105,12 @@ const InfoCredito = () => {
             );
         }
 
-        const pdfData = `data:application/pdf;base64,${base64Data}`;
-
         return (
             <TableRow>
                 <TableCell>{label}:</TableCell>
                 <TableCell>
                     <iframe
-                        src={pdfData}
+                        src={base64Data}
                         width="100%"
                         height="500px"
                         style={{ border: "none" }}
@@ -171,7 +173,7 @@ const InfoCredito = () => {
                             <TextField 
                                 type="number"
                                 name="ingresos"
-                                value={cliente.ingresos?.toFixed(2)||"0.00"}
+                                value={cliente.ingresos}
                                 onChange={handleChange}
                                 size="small"
                                 fullWidth
@@ -239,7 +241,7 @@ const InfoCredito = () => {
                             <TextField 
                                 type="number" 
                                 name="deudaTotal" 
-                                value={cliente.deudaTotal?.toFixed(2)||"0.00"} 
+                                value={cliente.deudaTotal} 
                                 onChange={handleChange} 
                                 size="small" 
                                 fullWidth 
@@ -252,7 +254,7 @@ const InfoCredito = () => {
                             <TextField 
                                 type="number" 
                                 name="saldo" 
-                                value={cliente.saldo?.toFixed(2)||"0.00"} 
+                                value={cliente.saldo} 
                                 onChange={handleChange} 
                                 size="small" 
                                 fullWidth 
@@ -265,7 +267,7 @@ const InfoCredito = () => {
                             <TextField 
                                 type="number" 
                                 name="mayorRetiro6" 
-                                value={cliente.mayorRetiro6?.toFixed(2)||"0.00"} 
+                                value={cliente.mayorRetiro6} 
                                 onChange={handleChange} 
                                 size="small" 
                                 fullWidth 
@@ -278,7 +280,7 @@ const InfoCredito = () => {
                             <TextField
                                 name="totalDepositos"
                                 type="number"
-                                value={cliente.totalDepositos?.toFixed(2)||"0.00"}
+                                value={cliente.totalDepositos}
                                 onChange={handleChange}
                                 size="small" 
                                 fullWidth 
@@ -305,7 +307,7 @@ const InfoCredito = () => {
                             <TextField 
                                 type="number" 
                                 name="mayorRetiro12" 
-                                value={cliente.mayorRetiro12?.toFixed(2)||"0.00"} 
+                                value={cliente.mayorRetiro12} 
                                 onChange={handleChange} 
                                 size="small" 
                                 fullWidth 
@@ -317,10 +319,10 @@ const InfoCredito = () => {
                         <TableCell>Antigüedad de la cuenta de ahorros, en años:</TableCell>
                         <TableCell>
                             <TextField
-                                name="antiguedadCuenta"
+                                name="tiempoCuentaAhorros"
                                 type="number"
-                                value={cliente.tiempoCuentaAhorros?.toFixed(2)||"0.00"}
-                                onChange={(e) => {handleChange}}
+                                value={cliente.tiempoCuentaAhorros}
+                                onChange={handleChange}
                                 size="small" 
                                 fullWidth 
                         />

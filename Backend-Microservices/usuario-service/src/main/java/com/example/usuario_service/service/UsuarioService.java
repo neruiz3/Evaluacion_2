@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -20,7 +21,7 @@ public class UsuarioService {
         return usuarioRepository.save(cliente);
     }
 
-    public UsuarioEntity getClienteByRut(String rut){
+    public Optional<UsuarioEntity> getClienteByRut(String rut){
         return usuarioRepository.findByRut(rut);
     }
 

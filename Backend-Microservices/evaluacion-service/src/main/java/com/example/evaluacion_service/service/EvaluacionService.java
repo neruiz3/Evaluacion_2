@@ -44,7 +44,6 @@ public class EvaluacionService {
         //verificar que se han completado los campos y adjuntado los documentos necesarios
         //vamos a coger un cliente para poder evaluar eso, ya que dicha informacion esta en los clientes.
         Usuario cliente = restTemplate.getForObject("http://usuario-service/api/v1/cliente/rut/" + credito.getRut(), Usuario.class);
-        Seguimiento seguimiento = restTemplate.getForObject("http://seguimiento-service/api/v1/seguimiento/rut/" + credito.getRut(), Seguimiento.class);
 
         if (compruebaCampos(cliente)) {
             if (compruebaDocumentos(credito.getTipoPrestamo(), cliente)) {
@@ -122,7 +121,7 @@ public class EvaluacionService {
 
     public EvaluacionEntity evaluacionCredito (EvaluacionEntity credito){
         System.out.println("Credito: " + credito.getTipoPrestamo().name());
-        Usuario cliente = restTemplate.getForObject("http://api/v1/cliente/rut/" + credito.getRut(), Usuario.class);
+        Usuario cliente = restTemplate.getForObject("http://usuario-service/api/v1/cliente/rut/" + credito.getRut(), Usuario.class);
 
         double cuotaIngreso = credito.getCuotaMensual()/cliente.getIngresos()*100.0;
         if(cuotaIngreso > 35.0){
@@ -173,7 +172,7 @@ public class EvaluacionService {
             credito.setEstado(Estado.EN_EVALUACION);
         }
         HttpEntity<Usuario> request = new HttpEntity<Usuario>(cliente);
-        Usuario actualizaCliente = restTemplate.postForObject("http://api/v1/cliente/", request, Usuario.class);
+        Usuario actualizaCliente = restTemplate.postForObject("http://usuario-service/api/v1/cliente/", request, Usuario.class);
         return evaluacionRepository.save(credito);
     }
 
@@ -181,7 +180,7 @@ public class EvaluacionService {
         Seguimiento actualizacion = restTemplate.getForObject("http://seguimiento-service/api/v1/seguimiento/idSolicitud/" + credito.getIdSolicitud(), Seguimiento.class);
         actualizacion.setEstado(credito.getEstado());
         HttpEntity<Seguimiento> request = new HttpEntity<Seguimiento>(actualizacion);
-        Seguimiento actualiza = restTemplate.postForObject("http://evaluacion-service/api/v1/seguimiento/", request, Seguimiento.class);
+        Seguimiento actualiza = restTemplate.postForObject("http://seguimiento-service/api/v1/seguimiento/", request, Seguimiento.class);
         return actualiza;
     }
 

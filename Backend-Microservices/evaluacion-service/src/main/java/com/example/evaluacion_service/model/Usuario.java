@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Usuario {
 
+    private Long id;
     private String rut;
     private String nombre;
     private String apellidos;
