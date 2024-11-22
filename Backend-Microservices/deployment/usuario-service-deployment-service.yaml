@@ -18,7 +18,7 @@ spec:
         - name: usuario-service
           image: nerearuiz3/usuario-service-image
           ports:
-            - containerPort: 8092
+            - containerPort: 8094
           env:
             - name: SERVER_PORT
               value: "0"
@@ -36,9 +36,9 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-credentials
-                  key: DB_USER_USUARIO
+                  key: DB_USER_CLIENTES
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-credentials
-                  key: DB_PASSWORD_USUARIO
+                  key: DB_PASSWORD_CLIENTES

@@ -18,7 +18,7 @@ spec:
         - name: seguimiento-service
           image: nerearuiz3/seguimiento-service-image
           ports:
-            - containerPort: 8092
+            - containerPort: 8091
           env:
             - name: SERVER_PORT
               value: "0"

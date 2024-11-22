@@ -18,7 +18,7 @@ spec:
         - name: solicitud-service
           image: nerearuiz3/solicitud-service-image
           ports:
-            - containerPort: 8092
+            - containerPort: 8093
           env:
             - name: SERVER_PORT
               value: "0"
@@ -36,9 +36,9 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-credentials
-                  key: DB_USER_SOLICITUD
+                  key: DB_USER_CREDITOS
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-credentials
-                  key: DB_PASSWORD_SOLICITUD
+                  key: DB_PASSWORD_CREDITOS

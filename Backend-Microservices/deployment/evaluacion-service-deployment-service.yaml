@@ -18,7 +18,7 @@ spec:
         - name: evaluacion-service
           image: nerearuiz3/evaluacion-service-image
           ports:
-            - containerPort: 8092
+            - containerPort: 8090
           env:
             - name: SERVER_PORT
               value: "0"
@@ -36,9 +36,9 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-credentials
-                  key: DB_USER_EVALUACION
+                  key: DB_USER_EVALUACIONES
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-credentials
-                  key: DB_PASSWORD_EVALUACION
+                  key: DB_PASSWORD_EVALUACIONES

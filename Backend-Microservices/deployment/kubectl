@@ -1,0 +1,63 @@
+Name:             clientes-db-deployment-6c6c5855d7-nwthv
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 22 Nov 2024 14:17:47 -0300
+Labels:           app=clientes-db-deployment
+                  pod-template-hash=6c6c5855d7
+                  tier=database
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.7
+IPs:
+  IP:           10.244.0.7
+Controlled By:  ReplicaSet/clientes-db-deployment-6c6c5855d7
+Containers:
+  clientes-db:
+    Container ID:   
+    Image:          mysql
+    Image ID:       
+    Port:           3306/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       CreateContainerConfigError
+    Ready:          False
+    Restart Count:  0
+    Environment:
+      MYSQL_USER:           <set to the key 'DB_USER_CLIENTES' in secret 'mysql-credentials'>      Optional: false
+      MYSQL_PASSWORD:       <set to the key 'DB_PASSWORD_CLIENTES' in secret 'mysql-credentials'>  Optional: false
+      MYSQL_ROOT_PASSWORD:  <set to the key 'DB_ROOT_PASSWORD' in secret 'mysql-credentials'>      Optional: false
+    Mounts:
+      /var/lib/mysql from clientes-db-data (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-4wtdk (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  clientes-db-data:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  clientes-db-pvc
+    ReadOnly:   false
+  kube-api-access-4wtdk:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                 From               Message
+  ----     ------     ----                ----               -------
+  Normal   Scheduled  3m31s               default-scheduler  Successfully assigned default/clientes-db-deployment-6c6c5855d7-nwthv to minikube
+  Normal   Pulling    3m27s               kubelet            Pulling image "mysql"
+  Normal   Pulled     107s                kubelet            Successfully pulled image "mysql" in 1m40.195s (1m40.196s including waiting). Image size: 603377931 bytes.
+  Warning  Failed     3s (x10 over 107s)  kubelet            Error: secret "mysql-credentials" not found
+  Normal   Pulled     3s (x9 over 107s)   kubelet            Container image "mysql" already present on machine

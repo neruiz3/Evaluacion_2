@@ -5,49 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4328789b-67f2-40ae-a62f-5183c75a6e64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/clientes-db-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/config-service-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/creditos-db-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/eureka-service-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/evaluacion-service-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/evaluaciones-db-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/gateway-service-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/mysql-config-map.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/mysql-secrets.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/seguimiento-service-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/seguimientos-db-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/simulacion-db-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/simulacionCredito-service-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/solicitud-service-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/usuario-service-deployment-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluacion-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seguimiento-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simulacionCredito-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solicitud-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usuario-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/eureka-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/eureka-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/evaluacion-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/evaluacion-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/seguimiento-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/seguimiento-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/simulacionCredito-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/simulacionCredito-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/solicitud-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/solicitud-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/usuario-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/usuario-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluacion-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluacion-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguimiento-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seguimiento-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seguimiento-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/seguimiento-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulacionCredito-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simulacionCredito-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulacionCredito-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simulacionCredito-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solicitud-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solicitud-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/evaluacion-service-deployment-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/evaluacion-service-deployment-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/kubectl" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/kubectl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/seguimiento-service-deployment-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/seguimiento-service-deployment-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/solicitud-service-deployment-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/solicitud-service-deployment-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/usuario-service-deployment-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/usuario-service-deployment-service.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +200,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732043012463</updated>
-      <workItem from="1732043013691" duration="79765000" />
+      <workItem from="1732043013691" duration="85922000" />
     </task>
     <servers />
   </component>
