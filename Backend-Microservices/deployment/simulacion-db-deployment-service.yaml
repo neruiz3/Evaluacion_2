@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: simulacion-db-pv
+  labels:
+    type: local
+spec:
+  storageClassName: standard
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/simulacion-db-data"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: simulacion-db-pvc
+  labels:
+    app: mysql
+    tier: database
+spec:
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simulacion-db-deployment
+  labels:
+    app: simulacion-db-deployment
+    tier: database
+spec:
+  selector:
+    matchLabels:
+      app: simulacion-db-deployment
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: simulacion-db-deployment
+        tier: database
+    spec:
+      containers:
+        - name: simulacion-db
+          image: mysql
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_USER_SIMULACION
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_PASSWORD_SIMULACION
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_ROOT_PASSWORD
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: simulacion-db-data
+      volumes:
+        - name: simulacion-db-data
+          persistentVolumeClaim:
+            claimName: simulacion-db-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simulacion-db-service
+  labels:
+    app: simulacion-db-service
+    tier: database
+spec:
+  ports:
+    - port: 3310
+      targetPort: 3306
+      protocol: TCP
+  selector:
+    app: simulacion-db-deployment
+    tier: database
+  type: LoadBalancer

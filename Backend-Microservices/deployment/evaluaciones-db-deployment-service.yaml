@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: evaluaciones-db-pv
+  labels:
+    type: local
+spec:
+  storageClassName: standard
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/evaluaciones-db-data"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: evaluaciones-db-pvc
+  labels:
+    app: mysql
+    tier: database
+spec:
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evaluaciones-db-deployment
+  labels:
+    app: evaluaciones-db-deployment
+    tier: database
+spec:
+  selector:
+    matchLabels:
+      app: evaluaciones-db-deployment
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: evaluaciones-db-deployment
+        tier: database
+    spec:
+      containers:
+        - name: evaluaciones-db
+          image: mysql
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_USER_EVALUACIONES
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_PASSWORD_EVALUACIONES
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_ROOT_PASSWORD
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: evaluaciones-db-data
+      volumes:
+        - name: evaluaciones-db-data
+          persistentVolumeClaim:
+            claimName: evaluaciones-db-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: evaluaciones-db-service
+  labels:
+    app: evaluaciones-db-service
+    tier: database
+spec:
+  ports:
+    - port: 3308
+      targetPort: 3306
+      protocol: TCP
+  selector:
+    app: evaluaciones-db-deployment
+    tier: database
+  type: LoadBalancer

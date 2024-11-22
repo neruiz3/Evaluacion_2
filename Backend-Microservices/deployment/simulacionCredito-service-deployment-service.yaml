@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simulacion-service-deployment
+  labels:
+    app: simulacion-service-deployment
+spec:
+  selector:
+    matchLabels:
+      app: simulacion-service-deployment
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simulacion-service-deployment
+    spec:
+      containers:
+        - name: simulacion-service
+          image: nerearuiz3/simulacion-service-image
+          ports:
+            - containerPort: 8092
+          env:
+            - name: SERVER_PORT
+              value: "0"
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config-map
+                  key: DB_HOST_SIMULACION
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config-map
+                  key: DB_PORT_SIMULACION
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_USER_SIMULACION
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_PASSWORD_SIMULACION

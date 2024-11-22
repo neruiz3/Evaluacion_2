@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seguimiento-service-deployment
+  labels:
+    app: seguimiento-service-deployment
+spec:
+  selector:
+    matchLabels:
+      app: seguimiento-service-deployment
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: seguimiento-service-deployment
+    spec:
+      containers:
+        - name: seguimiento-service
+          image: nerearuiz3/seguimiento-service-image
+          ports:
+            - containerPort: 8092
+          env:
+            - name: SERVER_PORT
+              value: "0"
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config-map
+                  key: DB_HOST_SEGUIMIENTO
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config-map
+                  key: DB_PORT_SEGUIMIENTO
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_USER_SEGUIMIENTO
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DB_PASSWORD_SEGUIMIENTO
