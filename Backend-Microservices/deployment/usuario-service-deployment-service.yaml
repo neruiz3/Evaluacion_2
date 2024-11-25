@@ -42,3 +42,8 @@ spec:
                 secretKeyRef:
                   name: mysql-credentials
                   key: DB_PASSWORD_CLIENTES
+            - name: EUREKA_SERVER_IP
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-config-map
+                  key: EUREKA_SERVER

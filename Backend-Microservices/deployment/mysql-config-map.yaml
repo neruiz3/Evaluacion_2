@@ -5,13 +5,14 @@ metadata:
   labels:
     app: mysql-config-map
 data:
-  DB_HOST_SEGUIMIENTO: seguimientos-db-service
+  DB_HOST_SEGUIMIENTO: "seguimientos-db-service"
   DB_PORT_SEGUIMIENTO: "3309"
-  DB_HOST_EVALUACION: evaluaciones-db-service
+  DB_HOST_EVALUACION: "evaluaciones-db-service"
   DB_PORT_EVALUACION: "3308"
-  DB_HOST_SIMULACION: simulacion-db-service
+  DB_HOST_SIMULACION: "simulacion-db-service"
   DB_PORT_SIMULACION: "3310"
-  DB_HOST_SOLICITUD: creditos-db-service
+  DB_HOST_SOLICITUD: "creditos-db-service"
   DB_PORT_SOLICITUD: "3307"
-  DB_HOST_USUARIO: clientes-db-service
+  DB_HOST_USUARIO: "clientes-db-service"
   DB_PORT_USUARIO: "3306"
+  EUREKA_SERVER: "eureka-service-service.default.svc.cluster.local"

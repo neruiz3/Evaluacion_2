@@ -92,4 +92,4 @@ spec:
   selector:
     app: creditos-db-deployment
     tier: database
-  type: LoadBalancer
+  type: NodePort
