@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eureka-service-deployment
+  name: eureka-server
   labels:
-    app: eureka-service-deployment
+    app: eureka-server
 spec:
   selector:
     matchLabels:
-      app: eureka-service-deployment
+      app: eureka-server
   replicas: 1
   template:
     metadata:
       labels:
-        app: eureka-service-deployment
+        app: eureka-server
     spec:
       containers:
-        - name: eureka-service
+        - name: eureka-server
           image: nerearuiz3/eureka-service-image
           ports:
             - containerPort: 8761
@@ -28,10 +28,9 @@ metadata:
     app: eureka-service-service
 spec:
   selector:
-    app: eureka-service-deployment
+    app: eureka-server
   ports:
     - protocol: TCP
       port: 8761
       targetPort: 8761
-      nodePort: 32089
   type: ClusterIP
