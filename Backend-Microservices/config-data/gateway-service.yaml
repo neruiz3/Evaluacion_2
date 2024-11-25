@@ -8,6 +8,9 @@ eureka:
       default-zone: http://eureka-service-service:8761/eureka/
   instance:
     preferIpAddress: true
+logging:
+  level:
+    org.springframework.cloud.netflix.eureka: DEBUG
 spring:
   application:
     name: gateway-service

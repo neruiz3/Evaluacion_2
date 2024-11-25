@@ -17,6 +17,9 @@ spec:
       containers:
         - name: gateway-service
           image: nerearuiz3/gateway-service-image
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              value: http://eureka-service-service:8761/eureka/
           ports:
             - containerPort: 8080
 ---
