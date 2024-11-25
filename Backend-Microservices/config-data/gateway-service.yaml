@@ -8,7 +8,6 @@ eureka:
       default-zone: http://eureka-service-service:8761/eureka/
   instance:
     preferIpAddress: true
-    hostname: ${HOSTNAME}
 spring:
   application:
     name: gateway-service
