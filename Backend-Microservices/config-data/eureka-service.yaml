@@ -4,8 +4,6 @@ eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
-    service-url:
-      default-zone: http://192.168.49.2:32089/eureka/
   instance:
     preferIpAddress: true
-    hostname: 192.168.49.2
+    hostname: eureka-service-service
