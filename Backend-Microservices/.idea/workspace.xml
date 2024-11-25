@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4328789b-67f2-40ae-a62f-5183c75a6e64" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/usuario-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/usuario-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-data/eureka-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/eureka-service.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +197,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732043012463</updated>
       <workItem from="1732043013691" duration="86028000" />
-      <workItem from="1732481423451" duration="12161000" />
+      <workItem from="1732481423451" duration="13648000" />
     </task>
     <servers />
   </component>
