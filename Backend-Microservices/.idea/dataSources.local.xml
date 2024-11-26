@@ -4,7 +4,7 @@
     <data-source name="clientes-db@192.168.49.2" uuid="75f02325-12e1-4027-abb2-e3d950f67389">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
       <secret-storage>master_key</secret-storage>
-      <user-name>prestabanco</user-name>
+      <user-name>root</user-name>
       <schema-mapping />
     </data-source>
     <data-source name="seguimientos-db@localhost" uuid="58ec135c-dee8-4631-a3ce-fbd8b193d3f0">

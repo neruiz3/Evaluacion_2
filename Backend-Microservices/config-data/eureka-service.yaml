@@ -8,4 +8,3 @@ eureka:
       defaultZone: http://eureka-service-service:8761/eureka/
   instance:
     preferIpAddress: true
-    hostname: eureka-service-service
