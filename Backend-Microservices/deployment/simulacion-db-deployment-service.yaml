@@ -92,4 +92,4 @@ spec:
   selector:
     app: simulacion-db-deployment
     tier: database
-  type: NodePort
+  type: LoadBalancer

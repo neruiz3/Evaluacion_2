@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-242.23339.11">
+    <data-source name="clientes-db@192.168.49.2" uuid="75f02325-12e1-4027-abb2-e3d950f67389">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>prestabanco</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="seguimientos-db@localhost" uuid="58ec135c-dee8-4631-a3ce-fbd8b193d3f0">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="clientes-db@localhost" uuid="3e63e11d-d1cd-4601-af64-f868a7b45e2d">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>prestabanco</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="simulacion-db@localhost" uuid="90301ac8-c524-4696-a4df-4c20ca7d33f4">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="evaluaciones-db@localhost" uuid="6c722430-77f8-4926-917d-df7db57dd36d">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="creditos-db@config-service-service" uuid="dd8ff1d3-5e65-4fc8-89d4-31172ec80fd4">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

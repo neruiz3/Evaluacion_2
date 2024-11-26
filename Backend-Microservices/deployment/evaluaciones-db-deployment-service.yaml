@@ -92,4 +92,4 @@ spec:
   selector:
     app: evaluaciones-db-deployment
     tier: database
-  type: NodePort
+  type: LoadBalancer
