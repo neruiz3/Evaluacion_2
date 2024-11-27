@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const Evaluacion1BackendServer = "localhost";
-const Evaluacion1BackendPort = import.meta.env.VITE_EVALUACION1_BACKEND_PORT;
+const Evaluacion1BackendServer = "127.0.0.1";
+const Evaluacion1BackendPort = "30397";
 
 console.log(Evaluacion1BackendServer)
 console.log(Evaluacion1BackendPort)
