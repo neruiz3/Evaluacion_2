@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4328789b-67f2-40ae-a62f-5183c75a6e64" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solicitud-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/solicitud-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrestaBank-Frontend/src/http-common.js" beforeDir="false" afterPath="$PROJECT_DIR$/../PrestaBank-Frontend/src/http-common.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +209,7 @@
       <workItem from="1732043013691" duration="86028000" />
       <workItem from="1732481423451" duration="35664000" />
       <workItem from="1732657862402" duration="3073000" />
+      <workItem from="1732735684325" duration="1163000" />
     </task>
     <servers />
   </component>

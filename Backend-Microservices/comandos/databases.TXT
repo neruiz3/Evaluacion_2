@@ -1,0 +1,27 @@
+mysql -u root -p
+(contraseña)
+
+CREATE DATABASE `clientes-db`;
+GRANT ALL PRIVILEGES ON *.* TO 'prestabanco'@'%';
+FLUSH PRIVILEGES;
+SHOW DATABASES;
+
+CREATE DATABASE `creditos-db`;
+GRANT ALL PRIVILEGES ON *.* TO 'prestabanco'@'%';
+FLUSH PRIVILEGES;
+SHOW DATABASES;
+
+CREATE DATABASE `evaluaciones-db`;
+GRANT ALL PRIVILEGES ON *.* TO 'prestabanco'@'%';
+FLUSH PRIVILEGES;
+SHOW DATABASES;
+
+CREATE DATABASE `seguimientos-db`;
+GRANT ALL PRIVILEGES ON *.* TO 'prestabanco'@'%';
+FLUSH PRIVILEGES;
+SHOW DATABASES;
+
+CREATE DATABASE `simulacion-db`;
+GRANT ALL PRIVILEGES ON *.* TO 'prestabanco'@'%';
+FLUSH PRIVILEGES;
+SHOW DATABASES;
